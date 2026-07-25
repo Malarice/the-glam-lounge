@@ -151,77 +151,71 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-    const container = document.getElementById("gallery-wrapper");
-    if (!container) return;
+    // This MUST match your HTML
+    const wrapper = document.getElementById("gallery-wrapper");
+    if (!wrapper) return;
 
-    const folder = "assets/gallery/"; // use relative path
-
-    const start = 1000007600;
-    const end = 1000007700;
-
-    let foundImages = [];
-    let loadCount = 0;
-    const expected = end - start + 1;
-
-    for (let i = start; i <= end; i++) {
-        const file = `${i}.jpg`;
-        const img = new Image();
-        img.src = folder + file;
-
-        img.onload = () => {
-            foundImages.push(file);
-            checkDone();
-        };
-
-        img.onerror = () => {
-            checkDone();
-        };
-    }
-
-    function checkDone() {
-        loadCount++;
-        if (loadCount === expected) {
-            if (foundImages.length === 0) {
-                console.warn("No gallery images found in range.");
-                return;
-            }
-
-            foundImages.sort(() => Math.random() - 0.5);
-            const four = foundImages.slice(0, 4);
-            renderImages(four);
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
         }
+        return array;
     }
 
-    function renderImages(images) {
-        let count = 1;
+    let allImages = [];
+
+    // This MUST exist in your project root
+    fetch("/gallery.json")
+        .then(res => res.json())
+        .then(images => {
+            allImages = images;
+
+            const shuffled = shuffle([...images]);
+            renderGallery(shuffled.slice(0, 5));
+
+            const tabs = document.querySelectorAll(".cs-button");
+            if (tabs.length > 0) {
+                tabs[0].classList.add("cs-active");
+            }
+        });
+
+    function renderGallery(images) {
+        wrapper.innerHTML = "";
+
+        const galleryDiv = document.createElement("div");
+        galleryDiv.className = "cs-gallery";
 
         images.forEach(file => {
             const picture = document.createElement("picture");
-            picture.className = `cs-picture cs-picture${count}`;
+            picture.className = "cs-image";
 
             picture.innerHTML = `
-                <source media="(max-width: 600px)" srcset="${folder}${file}">
-                <source media="(min-width: 601px)" srcset="${folder}${file}">
-                <img loading="lazy" decoding="async" src="${folder}${file}" alt="gallery image" width="306" height="360">
+                <source media="(max-width: 600px)" srcset="assets/gallery/${file}">
+                <source media="(min-width: 601px)" srcset="assets/gallery/${file}">
+                <img loading="lazy" decoding="async" src="assets/gallery/${file}" alt="gallery image">
             `;
 
-            container.appendChild(picture);
-            count++;
+            galleryDiv.appendChild(picture);
         });
 
-        const zigzag = document.createElement("img");
-        zigzag.className = "cs-graphic";
-        zigzag.src = "https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2Fzigzag.svg";
-        zigzag.alt = "zigzag";
-        zigzag.loading = "lazy";
-        zigzag.decoding = "async";
-
-        container.appendChild(zigzag);
+        wrapper.appendChild(galleryDiv);
     }
+
+    const tabs = document.querySelectorAll(".cs-button");
+
+    tabs.forEach(button => {
+        button.addEventListener("click", () => {
+            tabs.forEach(t => t.classList.remove("cs-active"));
+            button.classList.add("cs-active");
+
+            const shuffled = shuffle([...allImages]);
+            renderGallery(shuffled.slice(0, 5));
+        });
+    });
 
 });
 </script>
-
 
 
     <!-- Right Content -->
