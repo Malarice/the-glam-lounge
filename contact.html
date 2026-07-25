@@ -152,7 +152,6 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-    // This MUST match your HTML
     const wrapper = document.getElementById("gallery-wrapper");
     if (!wrapper) return;
 
@@ -166,7 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let allImages = [];
 
-    // This MUST exist in your project root
     fetch("/gallery.json")
         .then(res => res.json())
         .then(images => {
@@ -174,22 +172,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const shuffled = shuffle([...images]);
             renderGallery(shuffled.slice(0, 5));
-
-            const tabs = document.querySelectorAll(".cs-button");
-            if (tabs.length > 0) {
-                tabs[0].classList.add("cs-active");
-            }
         });
 
     function renderGallery(images) {
         wrapper.innerHTML = "";
 
         const galleryDiv = document.createElement("div");
-        galleryDiv.className = "cs-gallery";
+        galleryDiv.className = "cs-image-group";
+
+        let count = 1;
 
         images.forEach(file => {
             const picture = document.createElement("picture");
-            picture.className = "cs-image";
+            picture.className = `cs-picture cs-picture${count}`;
 
             picture.innerHTML = `
                 <source media="(max-width: 600px)" srcset="assets/gallery/${file}">
@@ -198,22 +193,20 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
 
             galleryDiv.appendChild(picture);
+            count++;
         });
+
+        const zigzag = document.createElement("img");
+        zigzag.className = "cs-graphic";
+        zigzag.src = "https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2Fzigzag.svg";
+        zigzag.alt = "zigzag";
+        zigzag.loading = "lazy";
+        zigzag.decoding = "async";
+
+        galleryDiv.appendChild(zigzag);
 
         wrapper.appendChild(galleryDiv);
     }
-
-    const tabs = document.querySelectorAll(".cs-button");
-
-    tabs.forEach(button => {
-        button.addEventListener("click", () => {
-            tabs.forEach(t => t.classList.remove("cs-active"));
-            button.classList.add("cs-active");
-
-            const shuffled = shuffle([...allImages]);
-            renderGallery(shuffled.slice(0, 5));
-        });
-    });
 
 });
 </script>
