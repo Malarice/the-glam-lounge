@@ -145,64 +145,8 @@
 <section id="why-choose-682">
   <div class="cs-container">
     <!-- Left Section -->
-<div id="gallery-wrapper"></div>
+<div id="gallery-wrapper" class="cs-image-group"></div>
 
-
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-    const wrapper = document.getElementById("gallery-wrapper");
-    if (!wrapper) return;
-
-    function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-    }
-
-    let allImages = [];
-
-    fetch("/gallery.json")
-        .then(res => res.json())
-        .then(images => {
-            allImages = images;
-
-            const shuffled = shuffle([...images]);
-            renderGallery(shuffled.slice(0, 5));
-        });
-
-    function renderGallery(images) {
-        wrapper.innerHTML = "";
-
-        const galleryDiv = document.createElement("div");
-        galleryDiv.className = "cs-image-group";
-
-        let count = 1;
-
-        images.forEach(file => {
-            const picture = document.createElement("picture");
-            picture.className = `cs-picture cs-picture${count}`;
-
-            picture.innerHTML = `
-                <source media="(max-width: 600px)" srcset="assets/gallery/${file}">
-                <source media="(min-width: 601px)" srcset="assets/gallery/${file}">
-                <img loading="lazy" decoding="async" src="assets/gallery/${file}" alt="gallery image">
-            `;
-
-            galleryDiv.appendChild(picture);
-            count++;
-        });
-
-        
-
-        wrapper.appendChild(galleryDiv);
-    }
-
-});
-</script>
 
 
     <!-- Right Content -->
