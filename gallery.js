@@ -4,8 +4,9 @@ function initGallery() {
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    // Make sure the gallery exists on this page
     const wrapper = document.getElementById("gallery-wrapper");
-    if (!wrapper) return;
+    if (!wrapper) return; // <-- prevents home page failure
 
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -24,36 +25,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const shuffled = shuffle([...images]);
             renderGallery(shuffled.slice(0, 5));
+
+            const tabs = document.querySelectorAll(".cs-button");
+            if (tabs.length > 0) {
+                tabs[0].classList.add("cs-active");
+            }
         });
 
     function renderGallery(images) {
         wrapper.innerHTML = "";
 
-        let count = 1;
+        const galleryDiv = document.createElement("div");
+        galleryDiv.className = "cs-gallery";
 
         images.forEach(file => {
             const picture = document.createElement("picture");
-            picture.className = `cs-picture cs-picture${count}`;
+            picture.className = "cs-image";
 
             picture.innerHTML = `
-                <source media="(max-width: 600px)" srcset="assets/gallery/${file}">
-                <source media="(min-width: 601px)" srcset="assets/gallery/${file}">
-                <img loading="lazy" decoding="async" src="assets/gallery/${file}" alt="gallery image">
+                <source media="(max-width: 600px)" srcset="/assets/gallery/${file}">
+                <source media="(min-width: 601px)" srcset="/assets/gallery/${file}">
+                <img loading="lazy" decoding="async" src="/assets/gallery/${file}" alt="gallery image">
             `;
 
-            wrapper.appendChild(picture);
-            count++;
+            galleryDiv.appendChild(picture);
         });
 
-        const zigzag = document.createElement("img");
-        zigzag.className = "cs-graphic";
-        zigzag.src = "https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2Fzigzag.svg";
-        zigzag.alt = "zigzag";
-        zigzag.loading = "lazy";
-        zigzag.decoding = "async";
-
-        wrapper.appendChild(zigzag);
+        wrapper.appendChild(galleryDiv);
     }
+
+    const tabs = document.querySelectorAll(".cs-button");
+
+    tabs.forEach(button => {
+        button.addEventListener("click", () => {
+            tabs.forEach(t => t.classList.remove("cs-active"));
+            button.classList.add("cs-active");
+
+            const shuffled = shuffle([...allImages]);
+            renderGallery(shuffled.slice(0, 5));
+        });
+    });
 
 });
 
