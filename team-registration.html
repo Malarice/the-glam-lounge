@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="/css/dark.css">
     <link rel="stylesheet" href="/css/registration.css">
     <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/gallery.css">
 
 
 
@@ -90,147 +91,110 @@
 
 
 
+  <!-- ============================================ -->
+<!--                 Why Choose Us                -->
+<!-- ============================================ -->
 
-        <!-- ============================================ -->
-        <!--                 Why Choose Us                -->
-        <!-- ============================================ -->
-        <section id="why-choose-682">
-            <div class="cs-container">
-                <!-- Left Section -->
-                <div class="cs-image-group" id="whyChooseGallery"></div>
+<section id="why-choose-1821">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Why Choose Us</span>
+            <h2 class="cs-title">We Set The Stage, You Set It Off!</h2>
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/assets/images/dj-music.webp">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/assets/images/dj-music.webp">
+                <img loading="lazy" decoding="async" src="/assets/images/dj-music.webp" alt="body builder" width="562" height="568">
+            </picture>
+        </div>
+        <ul class="cs-card-group">
 
+            <li class="cs-item">
+                <img class="cs-icon" loading="lazy" decoding="async"
+                     src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsquares.svg"
+                     alt="icon" width="32" height="32">
 
-                <script>
-                    const container = document.getElementById("whyChooseGallery");
-                    const folder = "/assets/gallery/";
-
-                    // Range of possible filenames
-                    const start = 1000007600;
-                    const end = 1000007700;
-
-                    let foundImages = [];
-                    let loadCount = 0;
-                    let expected = end - start + 1;
-
-                    // Try loading each possible file
-                    for (let i = start; i <= end; i++) {
-                        const file = `${i}.jpg`;
-                        const img = new Image();
-                        img.src = folder + file;
-
-                        img.onload = () => {
-                            foundImages.push(file);
-                            checkDone();
-                        };
-
-                        img.onerror = () => {
-                            checkDone();
-                        };
-                    }
-
-                    // When all attempts finish, pick EXACTLY 4 images
-                    function checkDone() {
-                        loadCount++;
-                        if (loadCount === expected) {
-                            // Shuffle
-                            foundImages.sort(() => Math.random() - 0.5);
-
-                            // Pick 4
-                            const four = foundImages.slice(0, 4);
-
-                            renderImages(four);
-                        }
-                    }
-
-                    function renderImages(images) {
-                        let count = 1;
-
-                        images.forEach(file => {
-                            const picture = document.createElement("picture");
-                            picture.className = `cs-picture cs-picture${count}`;
-
-                            picture.innerHTML = `
-            <source media="(max-width: 600px)" srcset="${folder}${file}">
-            <source media="(min-width: 601px)" srcset="${folder}${file}">
-            <img loading="lazy" decoding="async" src="${folder}${file}" alt="gallery image" width="306" height="360">
-        `;
-
-                            container.appendChild(picture);
-                            count++;
-                        });
-
-                        // Add zigzag AFTER all images
-                        const zigzag = document.createElement("img");
-                        zigzag.className = "cs-graphic";
-                        zigzag.src = "https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2Fzigzag.svg";
-                        zigzag.alt = "zigzag";
-                        zigzag.loading = "lazy";
-                        zigzag.decoding = "async";
-
-                        container.appendChild(zigzag);
-                    }
-                </script>
-
-
-                <!-- Right Content -->
-                <div class="cs-content">
-                    <span class="cs-topper">What Sets Us Apart</span>
-                    <h2 class="cs-title">Delivering High-Impact Majorette & Cheer Experiences</h2>
-                    <p class="cs-text">
-                        We don’t just host competitions—we create high-impact experiences that celebrate talent,
-                        precision, and spirit. Every event is designed to elevate performers and engage audiences
-                        through expert judging, vibrant energy, and professional production.
+                <div class="cs-item-wrapper">
+                    <h3 class="cs-h3">Professional Judging Standards</h3>
+                    <p class="cs-item-text">
+                        Scoring built on technique, creativity, synchronization, difficulty, and showmanship — ensuring fairness and excellence.
                     </p>
-                    <ul class="cs-ul">
-                        <li class="cs-li">
-                            <h3 class="cs-h3">
-                                <img class="cs-icon" aria-hidden="true"
-                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsquares.svg"
-                                    loading="lazy" decoding="async" alt="checkmark" width="17" height="18">
-                                Judging standards built on technique, creativity, synchronization, and showmanship.
-                            </h3>
-                        </li>
-                        <li class="cs-li">
-                            <h3 class="cs-h3">
-                                <img class="cs-icon" aria-hidden="true"
-                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsquares.svg"
-                                    loading="lazy" decoding="async" alt="checkmark" width="17" height="18">
-                                Crowd energy that amplifies every beat, move, and moment.
-                            </h3>
-                        </li>
-                        <li class="cs-li">
-                            <h3 class="cs-h3">
-                                <img class="cs-icon" aria-hidden="true"
-                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsquares.svg"
-                                    loading="lazy" decoding="async" alt="checkmark" width="17" height="18">
-                                Production value that includes professional lighting, sound, and staging.
-                            </h3>
-                        </li>
-                        <li class="cs-li">
-                            <h3 class="cs-h3">
-                                <img class="cs-icon" aria-hidden="true"
-                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsquares.svg"
-                                    loading="lazy" decoding="async" alt="checkmark" width="17" height="18">
-                                A performance environment that makes every team feel like stars.
-                            </h3>
-                        </li>
-                        <li class="cs-li">
-                            <h3 class="cs-h3">
-                                <img class="cs-icon" aria-hidden="true"
-                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsquares.svg"
-                                    loading="lazy" decoding="async" alt="checkmark" width="17" height="18">
-                                Events designed to inspire pride, growth, and unforgettable memories.
-                            </h3>
-                        </li>
-                    </ul>
-                    <a class="cs-button-solid" href="https://form.jotform.com/261995594499180">Register Now</a>
                 </div>
+            </li>
+
+            <li class="cs-item">
+                <img class="cs-icon" loading="lazy" decoding="async"
+                     src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsquares.svg"
+                     alt="icon" width="32" height="32">
+
+                <div class="cs-item-wrapper">
+                    <h3 class="cs-h3">High-Energy Performance Atmosphere</h3>
+                    <p class="cs-item-text">
+                        Our events amplify every beat, move, and moment with unmatched crowd engagement and electric energy.
+                    </p>
+                </div>
+            </li>
+
+            <li class="cs-item">
+                <img class="cs-icon" loading="lazy" decoding="async"
+                     src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsquares.svg"
+                     alt="icon" width="32" height="32">
+
+                <div class="cs-item-wrapper">
+                    <h3 class="cs-h3">Professional Production Quality</h3>
+                    <p class="cs-item-text">
+                        From lighting to sound to staging, every detail is crafted to give teams a polished, professional competition experience.
+                    </p>
+                </div>
+            </li>
+
+            <li class="cs-item">
+                <img class="cs-icon" loading="lazy" decoding="async"
+                     src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsquares.svg"
+                     alt="icon" width="32" height="32">
+
+                <div class="cs-item-wrapper">
+                    <h3 class="cs-h3">A Stage That Makes Teams Feel Like Stars</h3>
+                    <p class="cs-item-text">
+                        Every team gets the spotlight they deserve — creating unforgettable memories and moments of pride.
+                    </p>
+                </div>
+            </li>
+<a href="https://form.jotform.com/261995594499180" class="cs-button-solid" target="_blank" rel="noopener noreferrer">Register Now</a>
+        </ul>
+    </div>
+</section>
+                                
+
+
+        <!-- ============================================ -->
+        <!--                   Gallery                    -->
+        <!-- ============================================ -->
+   <section id="gallery-404">
+            <div class="cs-container">
+                <div class="cs-content">
+                    <div class="cs-flex">
+                        <span class="cs-topper">Gallery</span>
+                        <h2 class="cs-title">Highlights From Our Recent Performances</h2>
+                    </div>
+                    <div class="cs-button-group">
+                        <button class="cs-button" data-filter="one">All</button>
+                        <button class="cs-button" data-filter="two">Bring It!</button>
+                        <button class="cs-button" data-filter="three">Jam On It</button>
+                        <button class="cs-button" data-filter="four">Turn Up</button>
+                        <button class="cs-button" data-filter="five">Showtime</button>
+
+                    </div>
+                </div>
+
+                <div class="cs-gallery-wrapper" id="gallery-wrapper"></div>
+
             </div>
-
-
-
-
         </section>
+
+        <!-- AUTO-GALLERY SCRIPT -->
+        <script src="/gallery.js"></script>
 
 
 
