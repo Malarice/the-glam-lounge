@@ -187,66 +187,46 @@
         
 
    <!-- ============================================ -->
-        <!--                    Events                    -->
+        <!--                Team Registration-->
         <!-- ============================================ -->
-<!-- 
+
 <section id="competition-section">
     <div class="events-title-block">
-        <span class="events-topper">Upcoming Competitions</span>
-        <h2 class="events-title">2026 Majorette Competition Schedule</h2>
+        <span class="events-topper">Team Registration</span>
+        <h2 class="events-title">The Remix - August 29th - Clayton State University</h2>
     </div>
 
     <div class="competition-list" id="competitionList"></div>
 
 
 
- <div class="competition-list" id="competitionList"></div> -->
+ <div class="competition-list" id="competitionList"></div>
 <script>
-const events = [
-    { month: "AUG", day: "29", year: "2026" },
-    { month: "SEP", day: "12", year: "2026" },
-    { month: "SEP", day: "26", year: "2026" },
-    { month: "OCT", day: "10", year: "2026" },
-    { month: "OCT", day: "24", year: "2026" },
-    { month: "NOV", day: "14", year: "2026" },
-    { month: "DEC", day: "12", year: "2026" }
+const teams = [
+    { name: "Team Slot 1", status: "Awaiting Registration" },
+    { name: "Team Slot 2", status: "Awaiting Registration" },
+    { name: "Team Slot 3", status: "Awaiting Registration" },
+    { name: "Team Slot 4", status: "Awaiting Registration" },
+    { name: "Team Slot 5", status: "Awaiting Registration" },
+    { name: "Team Slot 6", status: "Awaiting Registration" },
+    { name: "Team Slot 7", status: "Awaiting Registration" },
+    { name: "Team Slot 8", status: "Awaiting Registration" },
+    { name: "Team Slot 9", status: "Awaiting Registration" },
+    { name: "Team Slot 10", status: "Awaiting Registration" }
 ];
 
-// Default event name (you can change this later)
-const defaultEventName = "MG Presentations Competition";
+const list = document.getElementById("registeredTeamsList");
 
-// Default times (also editable in one place)
-const defaultTimes = {
-    checkin: "11:00 AM",
-    doors: "12:00 PM",
-    showtime: "12:45 PM"
-};
-
-const list = document.getElementById("competitionList");
-
-events.forEach(e => {
+teams.forEach(team => {
     list.innerHTML += `
-        <div class="comp-row">
-            <div class="comp-date">
-                <span class="month">${e.month}</span>
-                <span class="day">${e.day}</span>
-                <span class="year">${e.year}</span>
-            </div>
-
-            <div class="comp-info">
-                <h3>${defaultEventName}</h3>
-                <p>
-                    Check-In ${defaultTimes.checkin} • 
-                    Doors ${defaultTimes.doors} • 
-                    Showtime ${defaultTimes.showtime}
-                </p>
-            </div>
-
-            <a href="" class="comp-btn">Buy Tickets</a>
+        <div class="team-slot">
+            <h3 class="team-name">${team.name}</h3>
+            <p class="team-info">${team.status}</p>
         </div>
     `;
 });
 </script>
+
 
 
 </section>
@@ -260,10 +240,10 @@ events.forEach(e => {
         <div class="cs-content">
             <div class="cs-flex">
                 <span class="cs-topper">Competition Divisions</span>
-                <h2 class="cs-title">MGPresentations366 • We Set the Stage. You Set It Off!</h2>
+                <h2 class="cs-title">MG Presentations 3:66 • We Set the Stage. You Set It Off!</h2>
             </div>
             <p class="cs-text">
-                Explore the official Trap Queens Majorette Competition categories. Each division highlights creativity, precision, musicality, and unmatched energy.
+                Explore the official Dance Competition categories. Each division highlights creativity, precision, musicality, and unmatched energy.
             </p>
         </div>                  
         <ul class="cs-card-group">
