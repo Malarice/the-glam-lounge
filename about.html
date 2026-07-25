@@ -119,77 +119,80 @@
 <div id="gallery-wrapper"></div>
 
 
-
 <script>
-const container = document.getElementById("whyChooseGallery");
-const folder = "/assets/gallery/";
+document.addEventListener("DOMContentLoaded", () => {
 
-// Range of possible filenames
-const start = 1000007600;
-const end = 1000007700;
+    const container = document.getElementById("gallery-wrapper");
+    if (!container) return;
 
-let foundImages = [];
-let loadCount = 0;
-let expected = end - start + 1;
+    const folder = "assets/gallery/"; // use relative path
 
-// Try loading each possible file
-for (let i = start; i <= end; i++) {
-    const file = `${i}.jpg`;
-    const img = new Image();
-    img.src = folder + file;
+    const start = 1000007600;
+    const end = 1000007700;
 
-    img.onload = () => {
-        foundImages.push(file);
-        checkDone();
-    };
+    let foundImages = [];
+    let loadCount = 0;
+    const expected = end - start + 1;
 
-    img.onerror = () => {
-        checkDone();
-    };
-}
+    for (let i = start; i <= end; i++) {
+        const file = `${i}.jpg`;
+        const img = new Image();
+        img.src = folder + file;
 
-// When all attempts finish, pick EXACTLY 4 images
-function checkDone() {
-    loadCount++;
-    if (loadCount === expected) {
-        // Shuffle
-        foundImages.sort(() => Math.random() - 0.5);
+        img.onload = () => {
+            foundImages.push(file);
+            checkDone();
+        };
 
-        // Pick 4
-        const four = foundImages.slice(0, 4);
-
-        renderImages(four);
+        img.onerror = () => {
+            checkDone();
+        };
     }
-}
 
-function renderImages(images) {
-    let count = 1;
+    function checkDone() {
+        loadCount++;
+        if (loadCount === expected) {
+            if (foundImages.length === 0) {
+                console.warn("No gallery images found in range.");
+                return;
+            }
 
-    images.forEach(file => {
-        const picture = document.createElement("picture");
-        picture.className = `cs-picture cs-picture${count}`;
+            foundImages.sort(() => Math.random() - 0.5);
+            const four = foundImages.slice(0, 4);
+            renderImages(four);
+        }
+    }
 
-        picture.innerHTML = `
-            <source media="(max-width: 600px)" srcset="${folder}${file}">
-            <source media="(min-width: 601px)" srcset="${folder}${file}">
-            <img loading="lazy" decoding="async" src="${folder}${file}" alt="gallery image" width="306" height="360">
-        `;
+    function renderImages(images) {
+        let count = 1;
 
-        container.appendChild(picture);
-        count++;
-    });
+        images.forEach(file => {
+            const picture = document.createElement("picture");
+            picture.className = `cs-picture cs-picture${count}`;
 
-    // Add zigzag AFTER all images
-    const zigzag = document.createElement("img");
-    zigzag.className = "cs-graphic";
-    zigzag.src = "https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2Fzigzag.svg";
-    zigzag.alt = "zigzag";
-    zigzag.loading = "lazy";
-    zigzag.decoding = "async";
+            picture.innerHTML = `
+                <source media="(max-width: 600px)" srcset="${folder}${file}">
+                <source media="(min-width: 601px)" srcset="${folder}${file}">
+                <img loading="lazy" decoding="async" src="${folder}${file}" alt="gallery image" width="306" height="360">
+            `;
 
-    container.appendChild(zigzag);
-}
+            container.appendChild(picture);
+            count++;
+        });
+
+        const zigzag = document.createElement("img");
+        zigzag.className = "cs-graphic";
+        zigzag.src = "https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2Fzigzag.svg";
+        zigzag.alt = "zigzag";
+        zigzag.loading = "lazy";
+        zigzag.decoding = "async";
+
+        container.appendChild(zigzag);
+    }
+
+});
 </script>
+
 
 
     <!-- Right Content -->
