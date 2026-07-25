@@ -196,37 +196,45 @@
         <h2 class="events-title">The Remix - August 29th - Clayton State University</h2>
     </div>
 
-    <div class="competition-list" id="competitionList"></div>
+   
 
+<div class="competition-list" id="registeredTeamsList"></div>
 
-
- <div class="competition-list" id="competitionList"></div>
 <script>
-const teams = [
-    { name: "Team Slot 1", status: "Awaiting Registration" },
-    { name: "Team Slot 2", status: "Awaiting Registration" },
-    { name: "Team Slot 3", status: "Awaiting Registration" },
-    { name: "Team Slot 4", status: "Awaiting Registration" },
-    { name: "Team Slot 5", status: "Awaiting Registration" },
-    { name: "Team Slot 6", status: "Awaiting Registration" },
-    { name: "Team Slot 7", status: "Awaiting Registration" },
-    { name: "Team Slot 8", status: "Awaiting Registration" },
-    { name: "Team Slot 9", status: "Awaiting Registration" },
-    { name: "Team Slot 10", status: "Awaiting Registration" }
+const teamSlots = [
+    { slot: 1, status: "Open – Register Team" },
+    { slot: 2, status: "Open – Register Team" },
+    { slot: 3, status: "Open – Register Team" },
+    { slot: 4, status: "Open – Register Team" },
+    { slot: 5, status: "Open – Register Team" },
+    { slot: 6, status: "Open – Register Team" },
+    { slot: 7, status: "Open – Register Team" },
+    { slot: 8, status: "Open – Register Team" },
+    { slot: 9, status: "Open – Register Team" },
+    { slot: 10, status: "Open – Register Team" }
 ];
 
 const list = document.getElementById("registeredTeamsList");
 
-teams.forEach(team => {
+teamSlots.forEach(t => {
     list.innerHTML += `
-        <div class="team-slot">
-            <h3 class="team-name">${team.name}</h3>
-            <p class="team-info">${team.status}</p>
+        <div class="comp-row">
+            <div class="comp-date">
+                <span class="month">Slot</span>
+                <span class="day">${t.slot}</span>
+                <span class="year">2026</span>
+            </div>
+
+            <div class="comp-info">
+                <h3>Team Registration</h3>
+                <p>${t.status}</p>
+            </div>
+
+            <a href="https://form.jotform.com/261995594499180" class="comp-btn">Register</a>
         </div>
     `;
 });
 </script>
-
 
 
 </section>

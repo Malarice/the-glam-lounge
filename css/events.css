@@ -1,246 +1,152 @@
-/* ============================
-   CALENDAR CONTAINER
-============================ */
-#calendar {
-  max-width: 80%;
-  width: 80%;
-  height: 100%;
-  max-height: 800px;
-  margin: 20px auto;
-  margin-bottom: 40px;
-  padding: 10px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+ /*-- -------------------------- -->
+<---          Events            -->
+<--- -------------------------- -*/
+
+/* SECTION BACKGROUND WITH IMAGE + OVERLAY */
+#competition-section {
+    position: relative;
+    padding: 80px 20px;
+    background: url('/assets/images/aug29competition.webp') center/cover no-repeat;
+    overflow: hidden;
 }
 
-/* Body background */
- 
-/* ============================
-   DEFAULT EVENT RESET
-============================ */
-.fc-event {
-  border: none !important;
-  background: transparent !important;
-  padding: 0 !important;
-  cursor: pointer;
-  box-shadow: none !important;
-  margin: 0 !important;
+/* Overlay */
+#competition-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.788);
+    z-index: 1;
 }
 
-/* Today highlight */
-.fc .fc-daygrid-day.fc-day-today {
-  background-color: var(--primary);
+/* Make content sit ABOVE overlay */
+#competition-section > * {
+    position: relative;
+    z-index: 2;
 }
 
-/* Day numbers */
-.fc .fc-daygrid-day-number {
-  padding: 4px;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 1;
+
+.events-title-block {
+  margin-top: 60px;
+    text-align: center;
+    margin-bottom: 30px;
 }
-/* ============================
-   FULLCALENDAR HEADER TITLE
-============================ */
-.fc-toolbar-title {
-  font-size: 28px;       /* desktop size */
-  font-weight: 700;
-  letter-spacing: 0.5px;
+
+.events-topper {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.events-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--bodyTextColorWhite);
+    margin: 0;
+}
+
+.competition-list {
+    max-width: 700px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.comp-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    border-radius: 12px;
+    background: var(--cardBG);
+    border: 1px solid var(--cardBorder);
+    transition: 0.2s ease;
+}
+
+.comp-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+}
+
+.comp-date {
+    width: 80px;
+    text-align: center;
+}
+
+.comp-date .month {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.comp-date .day {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--textMain);
+    line-height: 1;
+}
+
+.comp-date .year {
+    font-size: 0.8rem;
+    color: var(--textSoft);
+}
+
+.comp-info {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.comp-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--textMain);
+}
+
+.comp-info p {
+    margin: 4px 0 0;
+    font-size: 0.9rem;
+    color: var(--textSoft);
+}
+
+.comp-btn {
+    background: var(--primary);
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    white-space: nowrap;
 }
 
 @media (max-width: 600px) {
-  .fc-toolbar-title {
-    font-size: 20px;     /* mobile size */
-  }
+    .comp-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .comp-info {
+        padding: 0;
+    }
 }
 
-/* ============================
-   FULLCALENDAR NAVIGATION ARROWS
-============================ */
-.fc .fc-button {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
+:root {
+    --cardBG: #ffffff;
+    --cardBorder: rgba(0,0,0,0.1);
+    --textMain: #111;
+    --textSoft: #555;
 }
 
-/* Resize arrow icons */
-.fc .fc-prev-button .fc-icon,
-.fc .fc-next-button .fc-icon {
-  font-size: 36px;       /* desktop arrow size */
-  color: var(--primary);
-}
-
-@media (max-width: 600px) {
-  .fc .fc-prev-button .fc-icon,
-  .fc .fc-next-button .fc-icon {
-    font-size: 20px;     /* mobile arrow size */
-  }
-}
-
-/* Optional: space arrows away from title */
-.fc-toolbar-chunk:first-child,
-.fc-toolbar-chunk:last-child {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* ============================
-   DARK MODE
-============================ */
-.dark-mode {
-  background: #0d0d0d;
-  color: #e6e6e6;
-}
-
-.dark-mode #calendar {
-  background: #1a1a1a;
-  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
-  border: 1px solid #333;
-}
-
-.dark-mode .fc-toolbar-title,
-.dark-mode .fc-button {
-  color: #e6e6e6 !important;
-}
-
-.dark-mode .fc-daygrid-day {
-  background: #111;
-  border-color: #333;
-}
-
-.dark-mode .fc-daygrid-day-number {
-  color: #ccc;
-}
-
-.dark-mode .fc-event {
-  background: transparent !important;
-  color: white;
-  opacity: 0.95;
-}
-
-/* ============================
-   LOGO + BUTTON EVENT BLOCK
-============================ */
-.event-logo-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;          /* tighter spacing */
-  padding: 2px 0;    /* shorter block */
-  line-height: 1;
-}
-
-/* Circular logo (compact) */
-.event-logo-only {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 50%;
-  background: transparent !important;
-  border: 2px solid var(--primary);
-}
-
-/* CTA BUTTON (Tickets) */
-.event-register-btn {
-  display: inline-block;
-  background: var(--primary);
-  color: white;
-  padding: 2px 5px;
-  font-size: 18px;
-  border-radius: 4px;
-  text-decoration: none;
-  text-align: center;
-  line-height: 1.1;
-}
-
-.dark-mode .event-register-btn {
-  background: var(--primary);
-}
-
-
-
-/* ============================
-   MOBILE RESPONSIVE FIXES
-============================ */
-@media (max-width: 600px) {
-  #calendar {
-    padding: 5px;
-  }
-
-  .fc .fc-daygrid-day-number {
-    font-size: 14px;
-  }
-
-  .event-logo-only {
-    width: 22px;
-    height: 22px;
-  }
-
-  .event-register-btn {
-    font-size: 8px;
-    padding: 1px 4px;
-    margin-bottom: 4px;
-  }
-
-  .event-logo-block {
-    gap: 2px;
-    padding: 1px 0;
-  }
-}
-/* ============================
-   CALENDAR HEADER WITH LOGO
-============================ */
-.calendar-header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* centers vertically */
-  align-items: center;       /* centers horizontally */
-  text-align: center;
-  margin-bottom: 10px;
-  gap: 6px;
-}
-
-/* Logo styling */
-.calendar-logo {
-  margin-top: 20px;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--primary);
-}
-
-/* Title styling */
-.calendar-title {
-  font-size: 32px;
-  font-weight: 800;
-  margin: 0;
-  color: #fff;
-}
-
-/* Dark mode */
-.dark-mode .calendar-title {
-  color: #e6e6e6;
-}
-
-.dark-mode .calendar-logo {
-  border-color: #e6e6e6;
-}
-
-/* Mobile adjustments */
-@media (max-width: 600px) {
-  .calendar-logo {
-    width: 50px;
-    height: 50px;
-  }
-
-  .calendar-title {
-    font-size: 22px;
-  }
+body.dark-mode {
+    --cardBG: rgb(19, 18, 18);
+    --cardBorder: rgba(255,255,255,0.15);
+    --textMain: #fff;
+    --textSoft: #ccc;
 }
 /*-- -------------------------- -->
 <---          Services          -->
