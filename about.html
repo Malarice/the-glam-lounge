@@ -116,7 +116,8 @@
 <section id="why-choose-682">
   <div class="cs-container">
     <!-- Left Section -->
-<div id="gallery-wrapper"></div>
+<div class="cs-image-group"></div>
+
 
 
 
@@ -167,14 +168,20 @@ document.addEventListener("DOMContentLoaded", () => {
             count++;
         });
 
-        
+        const zigzag = document.createElement("img");
+        zigzag.className = "cs-graphic";
+        zigzag.src = "https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2Fzigzag.svg";
+        zigzag.alt = "zigzag";
+        zigzag.loading = "lazy";
+        zigzag.decoding = "async";
+
+        galleryDiv.appendChild(zigzag);
 
         wrapper.appendChild(galleryDiv);
     }
 
 });
 </script>
-
 
 
 
