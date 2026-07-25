@@ -34,7 +34,7 @@
 
 .events-topper {
     display: block;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--primary);
     text-transform: uppercase;
