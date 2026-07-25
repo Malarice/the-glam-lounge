@@ -1,0 +1,362 @@
+/*-- -------------------------- -->
+<---       Side By Side         -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #sbs-578 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 7vw, 4rem);
+  }
+  #sbs-578 .cs-content {
+    /* set text aling to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 32.625rem;
+    /* moved section padding to the .cs-content so we can have the cs-picture be full width on mobile without the padding preventing it from doing so */
+    padding: var(--sectionPadding);
+    padding-top: 0;
+    /* prevents padding from affecting width and height */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #sbs-578 .cs-text {
+    /* Override.  cs-topper cs-title and first cs-text should be removed and put into your global css sheet so it can control every instance of them on your site and is consistent. This selector is a section specific override that stays inside this stitch */
+    margin-bottom: 1rem;
+  }
+  #sbs-578 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #sbs-578 .cs-picture {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 18.75rem;
+  }
+  #sbs-578 .cs-picture img {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    height: 80%;
+    width: 60%;
+    object-fit: cover;
+    border-radius: 1000px;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #sbs-578 {
+    padding: var(--sectionPadding);
+  }
+  #sbs-578 .cs-container {
+    flex-direction: row;
+    justify-content: flex-start;
+    /* 60px - 128px */
+    gap: clamp(3.75rem, 10vw, 8rem);
+  }
+  #sbs-578 .cs-content {
+    width: 53%;
+    /* reset the padding, add the section padding back to the section container */
+    padding: 0;
+  }
+  #sbs-578 .cs-picture {
+    width: 47vw;
+    max-width: 30.875rem;
+    /* 518px - 700px */
+    height: clamp(32.375rem, 63vw, 43.75rem);
+    /* 16px - 28px, added margin left and bottom to cs-picture so it pushes away by the same amount the yellow box element overlaps it left and bottom. This maintains consistent spacing left and bottom */
+    margin: 0 0 clamp(1rem, 2.4vw, 1.75rem) clamp(1rem, 2.4vw, 1.75rem);
+    position: relative;
+  }
+  #sbs-578 .cs-picture:before {
+    /* yellow box */
+    content: '';
+    width: 50%;
+    height: 60%;
+    background: var(--secondary);
+    opacity: 1;
+    display: block;
+    position: absolute;
+    /* 16px - 28px, wrapped in calc function to multiple by negative 1 and get a negative clamp value */
+    bottom: calc(clamp(1rem, 2.4vw, 1.75rem)*-1);
+    left: calc(clamp(1rem, 2.4vw, 1.75rem)*-1);
+  }
+}
+/* Desktop - 1024px and up */
+@media only screen and (min-width: 64rem) {
+  #sbs-578 .cs-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    padding: var(--sectionPadding);
+  }
+
+  #sbs-578 .cs-content {
+    width: 50%;
+    max-width: none;
+    padding: 0;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  #sbs-578 .cs-picture {
+    width: 50%;
+    height: auto;
+    position: relative;
+  }
+
+  #sbs-578 .cs-picture img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1000px;
+  }
+}
+
+/*-- -------------------------- -->
+<---       Why Choose Us        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #why-choose-682 {
+        padding: var(--sectionPadding);
+    }
+    #why-choose-682 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #why-choose-682 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: left;
+        width: 100%;
+        max-width: 33.875rem;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: flex-start;
+    }
+    #why-choose-682 .cs-topper {
+        font-size: var(--topperFontSize);
+        line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: inherit;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.25rem;
+        display: block;
+    }
+    #why-choose-682 .cs-title {
+        font-size: var(--headerFontSize);
+        font-weight: 900;
+        line-height: 1.2em;
+        text-align: inherit;
+        max-width: 43.75rem;
+        margin: 0 0 1rem 0;
+        color: var(--headerColor);
+        position: relative;
+    }
+    #why-choose-682 .cs-text {
+        font-size: var(--bodyFontSize);
+        line-height: 1.5em;
+        text-align: inherit;
+        width: 100%;
+        max-width: 40.625rem;
+        margin: 0;
+        color: var(--bodyTextColor);
+    }
+    #why-choose-682 .cs-color {
+        color: var(--primary);
+    }
+    #why-choose-682 .cs-text {
+        margin-bottom: 1rem;
+    }
+    #why-choose-682 .cs-text:last-of-type {
+        margin-bottom: 2rem;
+    }
+    #why-choose-682 .cs-ul {
+        width: 100%;
+        margin: 0 0 2rem 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    #why-choose-682 .cs-li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    #why-choose-682 .cs-h3 {
+        font-size: 1.25rem;
+        line-height: 1.2em;
+        font-weight: 700;
+        margin: 0 0 0.5rem 0;
+        color: var(--headerColor);
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    #why-choose-682 .cs-icon {
+        width: 1.0625rem;
+        height: auto;
+        margin-top: 0.25rem;
+    }
+    #why-choose-682 .cs-item-text {
+        font-size: 0.875rem;
+        line-height: 1.5em;
+        text-align: left;
+        margin: 0;
+        color: var(--bodyTextColor);
+    }
+    #why-choose-682 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+    }
+    #why-choose-682 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #why-choose-682 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #why-choose-682 .cs-image-group {
+        /* everything inside the image group is in ems so the font size will scale them down.  Font size minimum is tied to view width size, and grows until it reaches 75% of the value on em */
+        font-size: min(2.3vw, 0.75em);
+        width: 39.5em;
+        height: 51.25em;
+        position: relative;
+        z-index: 1;
+        /* flips it horizontally */
+        transform: scaleX(-1);
+    }
+    #why-choose-682 .cs-picture {
+        width: 19.125em;
+        height: 22.5em;
+        overflow: hidden;
+        display: block;
+        position: absolute;
+    }
+    #why-choose-682 .cs-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 5%;
+        /* so the images are the original orientation, undoing the flip the cs-image-group is doing */
+        transform: scaleX(-1);
+    }
+    #why-choose-682 .cs-picture1 {
+        top: 5em;
+        left: 0;
+    }
+    #why-choose-682 .cs-picture2 {
+        top: 0;
+        right: 0;
+    }
+    #why-choose-682 .cs-picture3 {
+        bottom: 0;
+        left: 0;
+    }
+    #why-choose-682 .cs-picture4 {
+        bottom: 5em;
+        right: 0;
+    }
+    #why-choose-682 .cs-graphic {
+        display: none;
+    }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #why-choose-682 .cs-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #why-choose-682 .cs-image-group {
+        font-size: min(1.2vw, 1em);
+        flex: none;
+        /* sends it to the right in the 2nd position */
+        order: 2;
+    }
+    #why-choose-682 .cs-graphic {
+        width: 61.4375em;
+        height: auto;
+        display: block;
+        position: absolute;
+        bottom: 10.3125em;
+        right: -2em;
+        z-index: -1;
+    }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode #why-choose-682 .cs-topper .cs-color {
+        color: var(--primaryLight);
+    }
+    body.dark-mode #why-choose-682 .cs-title,
+    body.dark-mode #why-choose-682 .cs-text,
+    body.dark-mode #why-choose-682 .cs-h3,
+    body.dark-mode #why-choose-682 .cs-item-text {
+        color: var(--bodyTextColorWhite);
+    }
+    body.dark-mode #why-choose-682 .cs-text,
+    body.dark-mode #why-choose-682 .cs-item-text {
+        opacity: 0.8;
+    }
+    body.dark-mode #why-choose-682 .cs-icon {
+        filter: brightness(125%);
+    }
+    body.dark-mode #why-choose-682 .cs-graphic {
+        opacity: 0.5;
+    }
+}
+
+                                
+                                

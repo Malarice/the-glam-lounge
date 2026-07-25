@@ -1,0 +1,446 @@
+/* ============================
+   CALENDAR CONTAINER
+============================ */
+#calendar {
+  max-width: 80%;
+  width: 80%;
+  height: 100%;
+  max-height: 800px;
+  margin: 20px auto;
+  margin-bottom: 40px;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Body background */
+ 
+/* ============================
+   DEFAULT EVENT RESET
+============================ */
+.fc-event {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  cursor: pointer;
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+
+/* Today highlight */
+.fc .fc-daygrid-day.fc-day-today {
+  background-color: var(--primary);
+}
+
+/* Day numbers */
+.fc .fc-daygrid-day-number {
+  padding: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+/* ============================
+   FULLCALENDAR HEADER TITLE
+============================ */
+.fc-toolbar-title {
+  font-size: 28px;       /* desktop size */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 600px) {
+  .fc-toolbar-title {
+    font-size: 20px;     /* mobile size */
+  }
+}
+
+/* ============================
+   FULLCALENDAR NAVIGATION ARROWS
+============================ */
+.fc .fc-button {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Resize arrow icons */
+.fc .fc-prev-button .fc-icon,
+.fc .fc-next-button .fc-icon {
+  font-size: 36px;       /* desktop arrow size */
+  color: var(--primary);
+}
+
+@media (max-width: 600px) {
+  .fc .fc-prev-button .fc-icon,
+  .fc .fc-next-button .fc-icon {
+    font-size: 20px;     /* mobile arrow size */
+  }
+}
+
+/* Optional: space arrows away from title */
+.fc-toolbar-chunk:first-child,
+.fc-toolbar-chunk:last-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ============================
+   DARK MODE
+============================ */
+.dark-mode {
+  background: #0d0d0d;
+  color: #e6e6e6;
+}
+
+.dark-mode #calendar {
+  background: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+  border: 1px solid #333;
+}
+
+.dark-mode .fc-toolbar-title,
+.dark-mode .fc-button {
+  color: #e6e6e6 !important;
+}
+
+.dark-mode .fc-daygrid-day {
+  background: #111;
+  border-color: #333;
+}
+
+.dark-mode .fc-daygrid-day-number {
+  color: #ccc;
+}
+
+.dark-mode .fc-event {
+  background: transparent !important;
+  color: white;
+  opacity: 0.95;
+}
+
+/* ============================
+   LOGO + BUTTON EVENT BLOCK
+============================ */
+.event-logo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;          /* tighter spacing */
+  padding: 2px 0;    /* shorter block */
+  line-height: 1;
+}
+
+/* Circular logo (compact) */
+.event-logo-only {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: transparent !important;
+  border: 2px solid var(--primary);
+}
+
+/* CTA BUTTON (Tickets) */
+.event-register-btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 2px 5px;
+  font-size: 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.dark-mode .event-register-btn {
+  background: var(--primary);
+}
+
+
+
+/* ============================
+   MOBILE RESPONSIVE FIXES
+============================ */
+@media (max-width: 600px) {
+  #calendar {
+    padding: 5px;
+  }
+
+  .fc .fc-daygrid-day-number {
+    font-size: 14px;
+  }
+
+  .event-logo-only {
+    width: 22px;
+    height: 22px;
+  }
+
+  .event-register-btn {
+    font-size: 8px;
+    padding: 1px 4px;
+    margin-bottom: 4px;
+  }
+
+  .event-logo-block {
+    gap: 2px;
+    padding: 1px 0;
+  }
+}
+/* ============================
+   CALENDAR HEADER WITH LOGO
+============================ */
+.calendar-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* centers vertically */
+  align-items: center;       /* centers horizontally */
+  text-align: center;
+  margin-bottom: 10px;
+  gap: 6px;
+}
+
+/* Logo styling */
+.calendar-logo {
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+}
+
+/* Title styling */
+.calendar-title {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0;
+  color: #fff;
+}
+
+/* Dark mode */
+.dark-mode .calendar-title {
+  color: #e6e6e6;
+}
+
+.dark-mode .calendar-logo {
+  border-color: #e6e6e6;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .calendar-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .calendar-title {
+    font-size: 22px;
+  }
+}
+/*-- -------------------------- -->
+<---          Services          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #services-1628 {
+    padding: var(--sectionPadding);
+    background-color: #f7f7f7;
+  }
+  #services-1628 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375em;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #services-1628 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #services-1628 .cs-title {
+    max-width: 20ch;
+  }
+  #services-1628 .cs-text {
+    max-width: 40rem;
+    position: relative;
+    z-index: 1;
+  }
+  #services-1628 .cs-text:after {
+    /* divider line */
+    content: "";
+    width: 100%;
+    height: 1px;
+    margin-top: 1.5rem;
+    background: var(--primary);
+    opacity: 1;
+    display: block;
+    position: relative;
+  }
+  #services-1628 .cs-chevron {
+    --chevronColor: var(--primary);
+    width: 3rem;
+    height: auto;
+  }
+  #services-1628 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* 16px - 20px */
+    column-gap: clamp(1rem, 2.5vw, 1.25rem);
+    /* 28px - 40px */
+    row-gap: clamp(1.75rem, 2.5vw, 2.5rem);
+  }
+  
+  #services-1628 .cs-item {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    grid-column: span 12;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #services-1628 .cs-item:hover .cs-picture img {
+    opacity: .5;
+    transform: scale(1.2);
+  }
+  #services-1628 .cs-link {
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #services-1628 .cs-picture {
+    width: 100%;
+    height: 15rem;
+    margin-bottom: 1.5rem;
+    background-color: #000;
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+  #services-1628 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform .6s, opacity .3s;
+  }
+  #services-1628 .cs-h3 {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    text-align: left;
+    margin: 0 0 0.75rem 0;
+    color: var(--headerColor);
+  }
+  #services-1628 .cs-item-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    text-align: left;
+    margin: 0 0 1.5rem 0;
+    color: var(--bodyTextColor);
+  }
+  #services-1628 .cs-fake-link {
+    font-size: 1rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0;
+    margin-top: auto;
+    color: var(--primary);
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #services-1628 .cs-fake-link:hover .cs-icon {
+    transform: translateX(0.5rem);
+  }
+  #services-1628 .cs-icon {
+    width: 1.25rem;
+    height: auto;
+    display: block;
+    transition: transform .3s;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #services-1628 .cs-container {
+    max-width: 80rem;
+  }
+  #services-1628 .cs-content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #services-1628 .cs-flex {
+    text-align: left;
+    width: 40vw;
+    max-width: 40rem;
+    flex: none;
+  }
+  #services-1628 .cs-title {
+    margin: 0;
+  }
+  #services-1628 .cs-text {
+    padding: 0.75rem 0 0.75rem 1.5rem;
+  }
+  #services-1628 .cs-text:after {
+    width: 1px;
+    height: 100%;
+    margin: 0 1.5rem 0 0;
+    order: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  #services-1628 .cs-item {
+    grid-column: span 6;
+  }
+  #services-1628 .cs-picture {
+    /* 240px - 420px */
+    height: clamp(15rem, 33vw, 26.25rem);
+  }
+}
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #services-1628 .cs-item {
+    grid-column: span 4;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #services-1628 {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  body.dark-mode #services-1628 .cs-title,
+  body.dark-mode #services-1628 .cs-text,
+  body.dark-mode #services-1628 .cs-h3,
+  body.dark-mode #services-1628 .cs-item-text {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #services-1628 .cs-text,
+  body.dark-mode #services-1628 .cs-item-text {
+    opacity: .8;
+  }
+}
+                                
