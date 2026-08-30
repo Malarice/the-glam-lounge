@@ -999,7 +999,7 @@ filter: brightness(0) invert(1); /* makes it white */
   }
   #cs-navigation .cs-li-link.cs-active {
     font-weight: 700;
-    color: var(--headerColor);
+    color: var(--secondary);
   }
   #cs-navigation .cs-button-solid {
     font-size: 1rem;

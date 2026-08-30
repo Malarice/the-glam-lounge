@@ -1,251 +1,301 @@
 /*-- -------------------------- -->
-<---          Gallery           -->
+<---    Side By Side Reverse    -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #gallery-404 {
+  #sbsr-2420 {
+    margin-top: 10rem;
     padding: var(--sectionPadding);
-    overflow: hidden;
     position: relative;
-    background-color: #fff;
+    z-index: 1;
   }
-  #gallery-404 .cs-container {
+  #sbsr-2420:before {
+    /* background color overlay */
+    content: "";
     width: 100%;
-    /* changes to 1280px at tablet */
+    height: 100%;
+    background: var(--primary);
+    opacity: 0.05;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #sbsr-2420 .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
     max-width: 34.375rem;
     margin: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    /* 48px - 64px */
     gap: clamp(3rem, 6vw, 4rem);
-    position: relative;
   }
-  #gallery-404 .cs-content {
+  #sbsr-2420 .cs-content {
     /* set text align to left if content needs to be left aligned */
-    text-align: center;
+    text-align: left;
     width: 100%;
+    max-width: 36.25rem;
     display: flex;
     flex-direction: column;
     /* centers content horizontally, set to flex-start to left align */
-    align-items: center;
+    align-items: flex-start;
   }
-  #gallery-404 .cs-title {
-    max-width: 20ch;
-  }
-  #gallery-404 .cs-button-group {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    row-gap: 0.5rem;
-    column-gap: 2rem;
-  }
-#gallery-404 .cs-button {
-    padding: 0.45rem 1rem;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    background: var(--bodyBackgroundColor); /* neutral background */
-    color: var(--bodyTextColor);
-    cursor: pointer;
-    transition: 0.2s ease;
-}
-
-#gallery-404 .cs-button:hover {
-    background: var(--primary);
-    color: #fff;
-}
-
-#gallery-404 .cs-button.cs-active {
-    background: var(--primary);
-    color: #fff;
-    border-color: var(--primary);
-}
-
-
-
-
-
-  #gallery-404 .cs-gallery-wrapper {
+  #sbsr-2420 .cs-content-wrapper {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #sbsr-2420 .cs-text {
+    margin-bottom: 1rem;
+  }
+  #sbsr-2420 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    min-width: 9.375rem;
+    margin: 0;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    color: #fff;
+    display: inline-block;
     position: relative;
     z-index: 1;
   }
-  #gallery-404 .cs-gallery {
-    width: 100%;
-    padding: 0;
-    margin: 0;
+  #sbsr-2420 .cs-button-solid:before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: #000;
     opacity: 1;
-    visibility: visible;
+    border-radius: 0.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #sbsr-2420 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #sbsr-2420 .cs-ul {
+    width: 100%;
+    list-style: none;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    /* prevents padding from affecting width and height */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  #sbsr-2420 .cs-li {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-align: left;
+    font-weight: 700;
+    width: 100%;
+    margin: 0;
+    color: var(--bodyTextColor);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     position: relative;
+  }
+  #sbsr-2420 .cs-li-icon {
+    width: 1rem;
+    height: auto;
+    flex: none;
+    display: block;
+    position: relative;
+  }
+  #sbsr-2420 .cs-image-group {
+    /* scaling entire section down. font-size starts at a min in vw, and stops when that vales equals .74em, resets at desktop */
+    font-size: min(2.3vw, .6em);
+    width: 39.375em;
+    height: 44em;
+    position: relative;
+  }
+  #sbsr-2420 .cs-picture {
+    width: 100%;
+    height: 44em;
+    display: block;
+    position: relative;
+  }
+  #sbsr-2420 .cs-picture img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    position: relative;
+    bottom: 0;
+    left: 0;
+  }
+  #sbsr-2420 .cs-circle {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #sbsr-2420 .cs-message {
+    font-weight: 700;
+    width: 12.3125em;
+    padding: 1em 1.5em;
+    background-color: #fff;
+    border-radius: 2em;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #sbsr-2420 .cs-message:before {
+    /* background color overlay */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    opacity: 0.1;
+    border-radius: 2em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  #sbsr-2420 .cs-message:after {
+    /* background color overlay */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 0.25em solid var(--primary);
+    opacity: 0.2;
+    border-radius: 2em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  #sbsr-2420 .cs-arrow {
+    width: 4.4375em;
+    height: auto;
+    position: absolute;
+    top: 6.1875em;
+    left: 3.125em;
+    transform: rotate(-29deg);
+  }
+  #sbsr-2420 .cs-wrapper {
+    width: 100%;
+    max-width: 36.25rem;
+    display: flex;
+    flex-direction: column;
+    /* 16px - 32px */
+    gap: clamp(1rem, 1.9vw, 2rem);
+  }
+#sbsr-2420 .cs-graphic-group {
+    background-color: var(--primary);
+    /* 96px - 157px */
+    width: clamp(6rem, 10vw, 9.8125rem);
+    height: clamp(6rem, 10vw, 9.8125rem);
+    flex: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    /* 16px - 20px */
-    gap: clamp(1rem, 1.5vw, 1.25rem);
-    transition: transform 0.7s, opacity 0.3s, visibility 0.5s, top 0.3s, left 0.3s;
-    /* makes the transform scaling origin the top left corner, dictates the direction by which the scale transforms animate towards */
-    transform-origin: left top;
-  }
-  #gallery-404 .cs-gallery.cs-hidden {
-    /* by using visibility:hidden instead of display:none, we can see the animations from the opacity and transforms, display:none won't render animations. */
-    visibility: hidden;
-    /* prevents the mouse from interacting with it */
-    pointer-events: none;
-    /* hidden galleries have a 0 opacity, and we animate the opacity to 1 when they become active */
-    opacity: 0;
-    /* this top and left value help control the animation, by setting it to position absolute and left 0, the gallery won't fly off screen to the left, it will stop its position to be at the left edge of the .cs-container (left: 0). Same for the top:0 value, the gallery won't go past that position when it animates */
-    top: 0;
-    left: 0;
-    position: absolute;
-    /* prevents the hidden galleries from overflowing the section, and makes a nice animations to transition to and from */
-    transform: scaleY(0) scaleX(0);
-  }
-  #gallery-404 .cs-gallery.cs-hidden .cs-image {
-    /* when gallery is hidden, add these styles to the cs-image to animate from when cs-hidden is removed from the .cs-gallery */
-    transform: translateY(2.1875rem);
-    opacity: 0;
-  }
-  #gallery-404 .cs-image {
-    border-radius: 1.25rem;
-    width: 47%;
-    aspect-ratio: 1;
-    /* clips the image corners */
-    overflow: hidden;
-    display: block;
     position: relative;
-    /* when .cs-hidden is removed from the .cs-gallery, reset these values and animate between their hidden styles */
-    transform: translateY(0rem);
-    opacity: 1;
-    transition: opacity 0.6s, transform 0.6s;
-  }
-  #gallery-404 .cs-image:nth-of-type(1) {
-    /* changes transition delays at desktop */
-    /* these delays stagger the reveal of each image so they all go one after the other and not all at once */
-    transition-delay: 0.15s;
-  }
-  #gallery-404 .cs-image:nth-of-type(2) {
-    transition-delay: 0.3s;
-  }
-  #gallery-404 .cs-image:nth-of-type(3) {
-    transition-delay: 0.45s;
-  }
-  #gallery-404 .cs-image:nth-of-type(4) {
-    transition-delay: 0.6s;
-  }
-  #gallery-404 .cs-image:nth-of-type(5) {
-    transition-delay: 0.75s;
-  }
-  #gallery-404 .cs-image:nth-of-type(6) {
-    transition-delay: 0.9s;
-  }
-  #gallery-404 .cs-image img {
+    border-radius: 50%;
+}
+
+  #sbsr-2420 .cs-circle-small {
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
-    /* makes it act like a background image */
-    object-fit: cover;
+    z-index: -1;
+  }
+  #sbsr-2420 .cs-graphic {
+    /* 55px - 96px */
+    width: clamp(3.4375rem, 5vw, 6rem);
+    height: auto;
+  }
+  #sbsr-2420 .cs-header {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 2.9vw, 1.5625rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    display: block;
+    color: var(--primary);
+  }
+  #sbsr-2420 .cs-graphic-text {
+    margin-bottom: 0;
   }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #gallery-404 .cs-container {
-    max-width: 80rem;
-  }
-  #gallery-404 .cs-content {
-    text-align: left;
+  #sbsr-2420 .cs-wrapper {
     flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-  }
-  #gallery-404 .cs-title {
-    margin: 0;
-  }
-  #gallery-404 .cs-image {
-    width: 31.8%;
-    aspect-ratio: 1;
   }
 }
-/* Desktop - 1300px */
-@media only screen and (min-width: 81.25rem) {
-  #gallery-404 .cs-flex {
-    max-width: 34.375rem;
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #sbsr-2420 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    align-items: flex-start;
   }
-  #gallery-404 .cs-gallery {
-    align-items: stretch;
-    justify-content: center;
+  #sbsr-2420 .cs-image-group {
+    /* reset the scale */
+    font-size: min(0.95vw, 1rem);
+    /* prevent flexbox from squishing it */
+    flex: none;
+    order: 2;
   }
-  #gallery-404 .cs-image {
-    width: 39.375rem;
-    max-width: 100%;
-    height: 25rem;
-  }
-  #gallery-404 .cs-image:nth-of-type(2),
-  #gallery-404 .cs-image:nth-of-type(3),
-  #gallery-404 .cs-image:nth-of-type(4),
-  #gallery-404 .cs-image:nth-of-type(5) {
-    width: 19.0625rem;
-  }
-  #gallery-404 .cs-image:nth-of-type(1) {
-    /* these delays stagger the reveal of each image so they all go one after the other and not all at once */
-    transition-delay: 0.15s;
-  }
-  #gallery-404 .cs-image:nth-of-type(2) {
-    transition-delay: 0.3s;
-  }
-  #gallery-404 .cs-image:nth-of-type(3) {
-    transition-delay: 0.45s;
-  }
-  #gallery-404 .cs-image:nth-of-type(4) {
-    transition-delay: 0.15s;
-  }
-  #gallery-404 .cs-image:nth-of-type(5) {
-    transition-delay: 0.3s;
-  }
-  #gallery-404 .cs-image:nth-of-type(6) {
-    transition-delay: 0.45s;
+  #sbsr-2420 .cs-content-wrapper {
+    width: 50%;
   }
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
-
-    body.dark-mode #gallery-404 {
-    background-color: #121212; /* dark background */
+  body.dark-mode #sbsr-2420 {
+    background-color: rgba(0, 0, 0, 0.2);
   }
-  /* Topper */
-  body.dark-mode #gallery-404 .cs-topper {
-    color: var(--primaryLight);
+  body.dark-mode #sbsr-2420 .cs-topper {
+    color: var(--secondary);
   }
-
-  /* Titles, text, and default button text */
-  body.dark-mode #gallery-404 .cs-title,
-  body.dark-mode #gallery-404 .cs-text,
-  body.dark-mode #gallery-404 .cs-button {
+  body.dark-mode #sbsr-2420 .cs-title,
+  body.dark-mode #sbsr-2420 .cs-text,
+  body.dark-mode #sbsr-2420 .cs-li,
+  body.dark-mode #sbsr-2420 .cs-message,
+  body.dark-mode #sbsr-2420 .cs-header {
     color: var(--bodyTextColorWhite);
   }
-
-  /* Default (inactive) buttons in dark mode */
-  body.dark-mode #gallery-404 .cs-button {
-    background: #1a1a1a;        /* neutral dark background */
-    border: 1px solid #333;     /* subtle border */
+  body.dark-mode #sbsr-2420 .cs-li,
+  body.dark-mode #sbsr-2420 .cs-text {
+    opacity: 0.8;
   }
-
-  /* Hover state */
-  body.dark-mode #gallery-404 .cs-button:hover {
-    background: #2a2a2a;
+  body.dark-mode #sbsr-2420 .cs-message {
+    background-color: rgba(0, 0, 0, 0.3);
   }
-
-  /* ACTIVE button in dark mode */
-  body.dark-mode #gallery-404 .cs-button.active {
-    background: var(--primary);     /* your brand color */
-    border-color: var(--primary);
-    color: #fff;                    /* readable text */
+  body.dark-mode #sbsr-2420 .cs-arrow {
+    filter: grayscale(1) brightness(1000%);
+  }
+  body.dark-mode #sbsr-2420 .cs-circle,
+  body.dark-mode #sbsr-2420 .cs-circle-small {
+    filter: grayscale(1) brightness(100%);
   }
 }
-
-                                
+                                                          
