@@ -84,7 +84,7 @@
     display: block;
     height: 100%;
     width: 0%;
-    background: #000;
+    background: #a77820;
     opacity: 1;
     top: 0;
     left: 0;
@@ -140,7 +140,7 @@
     content: '';
     width: 100%;
     height: 100%;
-    background: #000;
+    background: #000000f3;
     opacity: 0.72;
     display: block;
     position: absolute;
@@ -265,7 +265,7 @@
     line-height: 1.2em;
     font-weight: 700;
     margin: 0;
-    color: var(--headerColor);
+    color: var(--primary);
   }
   #Hservices-2274 .cs-fake-link {
     font-size: 1rem;
@@ -280,7 +280,16 @@
     justify-content: center;
     align-items: center;
     gap: 0.75rem;
-  }
+}
+
+#Hservices-2274 .cs-arrow {
+    width: 1.25rem;
+    height: auto;
+    filter: brightness(0) saturate(100%) invert(78%) sepia(22%) saturate(600%) hue-rotate(5deg);
+}
+
+
+
   #Hservices-2274 .cs-background {
     width: 100%;
     height: 100%;
@@ -318,11 +327,13 @@
     align-items: flex-start;
     flex-direction: column;
   }
-  #Hservices-2274 .cs-icon {
+ #Hservices-2274 .cs-icon {
     width: 2.5rem;
     height: auto;
     margin: 0 0 1.25rem 0;
-  }
+    filter: brightness(0) saturate(100%) invert(78%) sepia(22%) saturate(600%) hue-rotate(5deg);
+}
+
   #Hservices-2274 .cs-h3 {
     /* 20px - 25px */
     font-size: clamp(1.25rem, 2vw, 1.5625rem);
@@ -330,7 +341,7 @@
     text-align: inherit;
     line-height: 1.2em;
     margin: 0 0 0.5rem 0;
-    color: var(--headerColor);
+    color: var(--primary);
     transition: color 0.3s;
   }
   #Hservices-2274 .cs-item-text {
@@ -402,11 +413,537 @@
   }
   body.dark-mode #Hservices-2274 .cs-h3,
   body.dark-mode #Hservices-2274 .cs-item-text,
-  body.dark-mode #Hservices-2274 .cs-number {
+  body.dark-mode #Hservices-2274 .cs-number, body.dark-mode #Hservices-2274 .cs-link, body.dark-mode #Hservices-2274 .cs-fake-link {
     color: var(--bodyTextColorWhite);
+    border-bottom-color: var(--bodyTextColorWhite);
   }
   body.dark-mode #Hservices-2274 .cs-text {
     opacity: 0.8;
   }
 }
+                                /*-- -------------------------- -->
+<---   Why Choose Sentinel    -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbsr-575 {
+        background-color: var(--primary);
+    }
+    #sbsr-575 .cs-container {
+        width: 100%;
+        max-width: 80em;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 7vw, 4rem);
+    }
+    #sbsr-575 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: left;
+        width: 100%;
+        max-width: 32.625rem;
+        /* moved section padding to the .cs-content so we can have the cs-picture be full width on mobile without the padding preventing it from doing so */
+        padding: var(--sectionPadding);
+        padding-top: 0;
+        /* prevents padding from affecting width and height */
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: flex-start;
+    }
+
+    #sbsr-575 .cs-topper,
+    #sbsr-575 .cs-title {
+        color: var(--bodyTextColorWhite);
+    }
+    #sbsr-575 .cs-text {
+        margin-bottom: 1rem;
+        color: var(--bodyTextColorWhite);
+        opacity: 0.8;
+    }
+    #sbsr-575 .cs-text:last-of-type {
+        margin-bottom: 2rem;
+    }
+    #sbsr-575 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--secondary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+        transition: color 0.3s;
+    }
+    #sbsr-575 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: var(--primaryLight);
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #sbsr-575 .cs-button-solid:hover {
+        color: #fff;
+    }
+    #sbsr-575 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #sbsr-575 .cs-picture {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 18.75rem;
+    }
+    #sbsr-575 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #sbsr-575 {
+        /* we use margin here instead of padding because we want to create the space OUTSIDE the section.  The overflow on the section clips the boxes we made to make the slanted designs, so we need to push from the outside of the section with margin to create space between it and the next section.  If the section above this Stitch has a white background, add margin-top: 0. If it has a white section below it, add margin-bottom: 0. This will allow more proper spacing and not have too much empty space.  If both sections above and below this Stitch have white backgrounds, you can just remove this margin all together */
+        margin: var(--sectionPadding);
+        margin-left: 0;
+        margin-right: 0;
+        padding: var(--sectionPadding);
+        background-color: transparent;
+        /* clips the red box from overflowing the section */
+        overflow: hidden;
+    }
+    #sbsr-575 .cs-container {
+        flex-direction: row;
+        position: relative;
+        z-index: 1;
+    }
+    #sbsr-575 .cs-container:before {
+        /* red box */
+        content: "";
+        width: 100vw;
+        margin-right: -38%;
+        background: var(--primary);
+        opacity: 1;
+        display: block;
+        position: absolute;
+        top: -9.375rem;
+        bottom: -9.375rem;
+        right: 50%;
+        z-index: -1;
+    }
+    #sbsr-575 .cs-content {
+        width: 51%;
+        /* reset the padding, add the section padding back to the section container */
+        padding: 0;
+    }
+    #sbsr-575 .cs-picture {
+        width: 47vw;
+        max-width: 38.625rem;
+        height: 33.5rem;
+        /* 24px - 32px, added margin top and bottom to cs-picture so it pushes away by the same amount the yellow box element overlaps it top and bottom. This maintains consistent spacing top and bottom */
+        margin: clamp(1.5rem, 3vw, 2rem) 0 clamp(1.5rem, 3vw, 2rem)
+            clamp(1.5rem, 3vw, 2rem);
+        position: relative;
+        /* sends it to the right in the 2nd position */
+        order: 2;
+    }
+    #sbsr-575 .cs-picture:before {
+        /* yellow box */
+        content: "";
+        width: 50%;
+        background: var(--secondary);
+        opacity: 1;
+        display: block;
+        position: absolute;
+        /*24px - 32px, wrapped in calc function to multiple by negative 1 and get a negative clamp value */
+        top: calc(clamp(1.5rem, 3vw, 2rem) * -1);
+        bottom: calc(clamp(1.5rem, 3vw, 2rem) * -1);
+        right: calc(clamp(1.5rem, 3vw, 2rem) * -1);
+    }
+}
+
+
+/*-- -------------------------- -->
+<---       About Us         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbs-311 {
+        padding: var(--sectionPadding);
+    }
+    #sbs-311 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #sbs-311 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: left;
+        width: 100%;
+        max-width: 33.875rem;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: flex-start;
+    }
+
+    #sbs-311 .cs-text {
+        margin-bottom: 1rem;
+    }
+    #sbs-311 .cs-text:last-of-type {
+        margin-bottom: 2rem;
+    }
+    #sbs-311 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--secondary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+    }
+    #sbs-311 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: var(--primaryLight);
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #sbs-311 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #sbs-311 .cs-quote {
+        margin: 0 0 2rem 0;
+        /* 16px - 32px */
+        padding: clamp(1rem, 3vw, 2rem);
+        background-color: var(--primaryLight);
+        border-radius: 1rem;
+        position: relative;
+    }
+    #sbs-311 .cs-quote-text {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        margin: 0 0 1rem;
+        color: var(--bodyTextColorWhite);
+        display: block;
+    }
+    #sbs-311 .cs-name {
+        font-size: 1rem;
+        line-height: 1.2em;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 0 0 0.25rem;
+        color: var(--headerColor);
+        display: block;
+    }
+    #sbs-311 .cs-job {
+        font-size: 0.875rem;
+        line-height: 1.5em;
+        color: var(--bodyTextColorWhite);
+        display: block;
+    }
+    #sbs-311 .cs-quote-icon {
+        /* 60px - 136px */
+        width: clamp(3.75rem, 10vw, 8.5rem);
+        height: auto;
+        position: absolute;
+        bottom: 0rem;
+        /* 16px - 32px */
+        right: clamp(1rem, 4vw, 2rem);
+    }
+    #sbs-311 .cs-image-group {
+        /* scaling the font size with the view width */
+        font-size: min(2.31vw, 0.7em);
+        /* using ems so we can use font size to scale the whole section */
+        width: 39.4375em;
+        height: 39.75em;
+        position: relative;
+    }
+    #sbs-311 .cs-picture {
+        border-radius: 1.5em;
+        /* clips img tag corners */
+        overflow: hidden;
+        position: absolute;
+        display: block;
+    }
+    #sbs-311 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        /* makes image act like a background image */
+        object-fit: cover;
+    }
+    #sbs-311 .cs-picture1 {
+        width: 32.625em;
+        height: 36.3125em;
+        left: 0;
+        top: 0;
+    }
+    #sbs-311 .cs-picture2 {
+        width: 25.875em;
+        height: 25em;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
+        /* 6px - 12px */
+        border: clamp(0.375em, 1.5vw, 0.75em) solid #ffffff;
+        right: 0;
+        bottom: 0;
+    }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #sbs-311 .cs-container {
+        flex-flow: row;
+        justify-content: space-between;
+        gap: 3.25rem;
+    }
+    #sbs-311 .cs-image-group {
+        font-size: min(1.2vw, 1em);
+        flex: none;
+    }
+    #sbs-311 .cs-content {
+        margin: 0;
+    }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode #sbs-311 .cs-image-group:before,
+    body.dark-mode #sbs-311 .cs-image-group:after {
+        background: var(--accent);
+    }
+    body.dark-mode #sbs-311 .cs-picture2 {
+        background-color: var(--dark);
+        /* 6px - 12px */
+        border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
+    }
+    body.dark-mode #sbs-311 .cs-topper {
+        color: var(--primaryLight);
+    }
+    body.dark-mode #sbs-311 .cs-title,
+    body.dark-mode #sbs-311 .cs-text,
+    body.dark-mode #sbs-311 .cs-h3,
+    body.dark-mode #sbs-311 .cs-quote-text,
+    body.dark-mode #sbs-311 .cs-name {
+        color: var(--bodyTextColorWhite);
+    }
+    body.dark-mode #sbs-311 .cs-quote {
+        background-color: var(--accent);
+    }
+    body.dark-mode #sbs-311 .cs-job {
+        color: var(--bodyTextColorWhite);
+        opacity: 0.8;
+    }
+    body.dark-mode #sbs-311 .cs-quote-icon {
+        opacity: 0.2;
+    }
+}
+
                                 
+
+                                
+
+                                
+                                /*-- -------------------------- -->
+<---            CTA             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #cta-403 {
+    padding: var(--sectionPadding);
+    position: relative;
+  }
+  #cta-403 .cs-background {
+    width: 100%;
+    height: 100%;
+    background-blend-mode: multiply;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #cta-403 .cs-background:before {
+    /* background color overlay */
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background:var(--primary);
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #cta-403 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* Makes img tag act as a background image */
+    object-fit: cover;
+    /* positions the image inside the parent */
+    object-position: 0% 30%;
+  }
+  #cta-403 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #cta-403 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    max-width: 32.3125rem;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #cta-403 .cs-title,
+  #cta-403 .cs-text {
+    color: var(--bodyTextColorWhite);
+  }
+  #cta-403 .cs-text {
+    opacity: 0.8;
+    margin-bottom: 1rem;
+  }
+  #cta-403 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #cta-403 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--secondary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  #cta-403 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: var(--primaryLight);
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+  }
+  #cta-403 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #cta-403 .cs-background {
+    /* clips the black slant so it doesnt overflow */
+    overflow: hidden;
+  }
+  #cta-403 .cs-background:before {
+    width: 40%;
+    opacity: 1;
+  }
+  #cta-403 .cs-background:after {
+    /* black slant */
+    content: "";
+    width: 31.25rem;
+    height: 93.75rem;
+    margin-right: -3.125rem;
+    background: -moz-linear-gradient(left, #1a1a1a 0%, #1a1a1a 57%, rgba(26, 26, 26, 0) 100%);
+    background: -webkit-linear-gradient(left, #1a1a1a 0%, #1a1a1a 57%, rgba(26, 26, 26, 0) 100%);
+    background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 57%, rgba(26, 26, 26, 0) 100%);
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 50%;
+    transform: rotate(10deg) translateY(-50%);
+  }
+  #cta-403 .cs-background img {
+    width: 60%;
+    object-position: right;
+    left: auto;
+    right: 0;
+  }
+  #cta-403 .cs-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #cta-403 .cs-content {
+    text-align: left;
+    align-items: flex-start;
+    width: 45%;
+  }
+  #cta-403 .cs-text,
+  #cta-403 .cs-title {
+    margin-left: 0;
+  }
+}
