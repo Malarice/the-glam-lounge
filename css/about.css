@@ -1,364 +1,203 @@
 /*-- -------------------------- -->
-<---       Side By Side         -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #sbs-578 .cs-container {
-    width: 100%;
-    max-width: 80rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 7vw, 4rem);
-  }
-  #sbs-578 .cs-content {
-    /* set text aling to left if content needs to be left aligned */
-    text-align: left;
-    width: 100%;
-    max-width: 32.625rem;
-    /* moved section padding to the .cs-content so we can have the cs-picture be full width on mobile without the padding preventing it from doing so */
-    padding: var(--sectionPadding);
-    padding-top: 0;
-    /* prevents padding from affecting width and height */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: flex-start;
-  }
-  #sbs-578 .cs-text {
-    /* Override.  cs-topper cs-title and first cs-text should be removed and put into your global css sheet so it can control every instance of them on your site and is consistent. This selector is a section specific override that stays inside this stitch */
-    margin-bottom: 1rem;
-  }
-  #sbs-578 .cs-text:last-of-type {
-    margin-bottom: 2rem;
-  }
-  #sbs-578 .cs-picture {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 18.75rem;
-  }
-  #sbs-578 .cs-picture img {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    height: 80%;
-    width: 60%;
-    object-fit: cover;
-    border-radius: 1000px;
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #sbs-578 {
-    padding: var(--sectionPadding);
-  }
-  #sbs-578 .cs-container {
-    flex-direction: row;
-    justify-content: flex-start;
-    /* 60px - 128px */
-    gap: clamp(3.75rem, 10vw, 8rem);
-  }
-  #sbs-578 .cs-content {
-    width: 53%;
-    /* reset the padding, add the section padding back to the section container */
-    padding: 0;
-  }
-  #sbs-578 .cs-picture {
-    width: 47vw;
-    max-width: 30.875rem;
-    /* 518px - 700px */
-    height: clamp(32.375rem, 63vw, 43.75rem);
-    /* 16px - 28px, added margin left and bottom to cs-picture so it pushes away by the same amount the yellow box element overlaps it left and bottom. This maintains consistent spacing left and bottom */
-    margin: 0 0 clamp(1rem, 2.4vw, 1.75rem) clamp(1rem, 2.4vw, 1.75rem);
-    position: relative;
-  }
-  #sbs-578 .cs-picture:before {
-    /* yellow box */
-    content: '';
-    width: 50%;
-    height: 60%;
-    background: var(--secondary);
-    opacity: 1;
-    display: block;
-    position: absolute;
-    /* 16px - 28px, wrapped in calc function to multiple by negative 1 and get a negative clamp value */
-    bottom: calc(clamp(1rem, 2.4vw, 1.75rem)*-1);
-    left: calc(clamp(1rem, 2.4vw, 1.75rem)*-1);
-  }
-}
-/* Desktop - 1024px and up */
-@media only screen and (min-width: 64rem) {
-  #sbs-578 .cs-container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 4rem;
-    padding: var(--sectionPadding);
-  }
-
-  #sbs-578 .cs-content {
-    width: 50%;
-    max-width: none;
-    padding: 0;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  #sbs-578 .cs-picture {
-    width: 50%;
-    height: auto;
-    position: relative;
-  }
-
-  #sbs-578 .cs-picture img {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 1000px;
-  }
-}
-/*-- -------------------------- -->
-<---        Why Choose Us       -->
+<---   Side By Side Reverse     -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #why-choose-1821 {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-  }
-  #why-choose-1821 .cs-container {
-    width: 100%;
-    max-width: 106.25rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-  #why-choose-1821 .cs-content {
-    text-align: center;
-    width: 100%;
-    padding: var(--sectionPadding);
-    background-color: var(--bodyTextColor);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-  #why-choose-1821 .cs-topper {
-    color: var(--bodyTextColorWhite);
-  }
-  #why-choose-1821 .cs-title {
-    margin: 0 0 3rem;
-    max-width: 13ch;
-    color: var(--bodyTextColorWhite);
-  }
-  #why-choose-1821 .cs-picture {
-    width: 100%;
-    max-width: 36.625rem;
-    height: auto;
-    display: block;
-  }
-  #why-choose-1821 .cs-picture img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 20%;
-  }
-  #why-choose-1821 .cs-card-group {
-    width: 100%;
-    max-width: 36.625rem;
-    padding: var(--sectionPadding);
-    /* 16px - 44px */
-    padding-left: clamp(1rem, 4vw, 2.75rem);
-    /* 16px - 64px */
-    padding-right: clamp(1rem, 4vw, 4rem);
-    box-sizing: border-box;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    /* 32px - 40px */
-    gap: clamp(2rem, 0.5vw, 2.5rem);
-  }
-  #why-choose-1821 .cs-item {
-    list-style: none;
-    width: 100%;
-    max-width: 36.625rem;
-    /* prevents padding from affecting height and width */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-  #why-choose-1821 .cs-item-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-  #why-choose-1821 .cs-icon {
-    width: 2rem;
-    height: auto;
-    display: block;
-  }
-  #why-choose-1821 .cs-h3 {
-    /* 20px - 25px */
-    font-size: clamp(1.25rem, 2vw, 1.5625rem);
-    line-height: 1.2em;
-    font-weight: 700;
-    margin: 0;
-    color: var(--headerColor);
-  }
-  #why-choose-1821 .cs-item-text {
-    font-size: 1rem;
-    line-height: 1.5em;
-    margin: 0;
-    color: var(--bodyTextColor);
-  }
+    #sbsr-76 {
+        padding: var(--sectionPadding);
+        /* clips the red box from causing overflow issues */
+        overflow: hidden;
+        margin-top: 4rem;
+    }
+    #sbsr-76 .cs-container {
+        width: 100%;
+        /* changes to 1280px at tablet */
+        max-width: 34.375rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #sbsr-76 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: left;
+        width: 100%;
+        max-width: 33.875rem;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: flex-start;
+    }
+
+    #sbsr-76 .cs-text {
+        margin-bottom: 1rem;
+    }
+    #sbsr-76 .cs-text:last-of-type {
+        margin-bottom: 2rem;
+    }
+    #sbsr-76 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+    }
+    #sbsr-76 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #sbsr-76 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #sbsr-76 .cs-wrapper {
+        width: 95%;
+        max-width: 34.375rem;
+        /* 28px - 80px */
+        /* pushes up and down by the same amount the decorative box overflows the wrapper */
+        margin: clamp(1.75em, 7.8vw, 5em) 0;
+        position: relative;
+        z-index: 1;
+    }
+    #sbsr-76 .cs-wrapper:before {
+        /* Red decorative box */
+        content: "";
+        /* make it huge so it covers everything on the left as it overflows */
+        width: 30em;
+        background: var(--primary);
+        opacity: 1;
+        border-radius: 1rem;
+        position: absolute;
+        display: block;
+        /* 28px - 80px */
+        /* wrapped in a calc function to get a negative clamp value */
+        top: calc(clamp(1.75em, 7.8vw, 5em) * -1);
+        bottom: calc(clamp(1.75em, 7.8vw, 5em) * -1);
+        left: 4.0625em;
+        z-index: -1;
+    }
+    #sbsr-76 .cs-picture {
+        width: 100%;
+        margin: 0;
+        /* width divided by height */
+        aspect-ratio: 0.93134328;
+        border-radius: 1rem;
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+    #sbsr-76 .cs-picture:before {
+        /* Top right box */
+        content: "";
+        width: 10rem;
+        /* 202px - 248px */
+        height: clamp(12.625rem, 25vw, 15.5rem);
+        background: var(--primary);
+        opacity: 1;
+        border-radius: 1rem;
+        position: absolute;
+        display: block;
+        /* 16px -20px */
+        /* wrapped in a calc function to get a negative clamp value */
+        top: calc(clamp(0.5rem, 2.09vw, 1.25rem) * -1);
+        right: calc(clamp(0.5rem, 2.09vw, 1.25rem) * -1);
+    }
+    #sbsr-76 .cs-picture:after {
+        /* Bottom left box */
+        content: "";
+        width: 0rem;
+        /* 202px - 248px */
+        height: clamp(12.625rem, 25vw, 15.5rem);
+        background: var(--primary);
+        opacity: 1;
+        border-radius: 1rem;
+        position: absolute;
+        display: block;
+        /* 16px -20px */
+        /* wrapped in a calc function to get a negative clamp value */
+        bottom: calc(clamp(0.5rem, 2.09vw, 1.25rem) * -1);
+        left: calc(clamp(0.5rem, 2.09vw, 1.25rem) * -1);
+        z-index: -1;
+    }
+    #sbsr-76 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 40vh;
+        width: 40vh;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #why-choose-1821 .cs-container {
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-  }
-  #why-choose-1821 .cs-content {
-    text-align: left;
-    width: 100%;
-    align-items: flex-start;
-    background-color: transparent;
-    
-  }
-  #why-choose-1821 .cs-content:before {
-    /* background color, moves to the section parent at desktop */
-    content: '';
-    width: 100%;
-    height: 100%;
-    background-color: var(--bodyTextColor);
-    opacity: 1;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    border-radius: 50%;
-    
-  }
-  #why-choose-1821 .cs-picture {
-    margin-left: auto;
-    max-width: 100%;
-  }
-  #why-choose-1821 .cs-card-group {
-    width: 65%;
-    max-width: 100%;
-    /* prevents flexbox from squishing it */
-    flex: none;
-  }
-  #why-choose-1821 .cs-item {
-    flex-direction: row;
-  }
+    #sbsr-76 .cs-container {
+        max-width: 80rem;
+        flex-direction: row;
+        justify-content: flex-end;
+        /* 60px - 128px */
+        gap: clamp(3.75rem, 9.5vw, 8rem);
+    }
+    #sbsr-76 .cs-wrapper {
+        /* 328px - 502px */
+        width: clamp(20.5rem, 37.5vw, 31.375rem);
+        /* 440px - 520px */
+        height: clamp(27.5rem, 40vw, 32.5rem);
+        /* 16px - 20px */
+        margin-right: clamp(1rem, 5vw, 1.25rem);
+        /* sends it to the right in the 2nd position */
+        order: 2;
+        flex: none;
+    }
+    #sbsr-76 .cs-picture {
+        margin: 0;
+        height: 100%;
+        flex: none;
+    }
+    #sbsr-76 .cs-content {
+        width: 45%;
+        margin: 0;
+    }
 }
-/* Desktop - 1400px */
-@media only screen and (min-width: 87.5rem) {
-  #why-choose-1821:before {
-    /* background color */
-    content: '';
-    width: 100%;
-    height: 100%;
-  background-color: var(--bodyTextColor);
-    opacity: 1;
-    display: block;
-    position: absolute;
-    left: auto;
-    right: 50%;
-    margin-right: 0.625rem;
-    z-index: -1;
-    border-radius: 50%;
-  }
-  #why-choose-1821 .cs-content {
-    width: 50%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  #why-choose-1821 .cs-content:before {
-    left: auto;
-    right: 50%;
-    margin-right: 0.625rem;
-  }
-  #why-choose-1821 .cs-picture {
-    width: auto;
-    height: 80%;
-    display: flex;
-    align-items: flex-end;
-    position: absolute;
-    bottom: 2.5rem;
-    right: 2.5rem;
-    z-index: -1;
-  }
-  #why-choose-1821 .cs-picture img {
-    width: auto;
-    height: 100%;
-    max-height: 47.5rem;
-    object-fit: contain;
-    border-radius: 10%;
-  }
-  #why-choose-1821 .cs-card-group {
-    width: 50%;
-  }
-}
-/* Dark Mode - Mobile */
+/* Dark Mode */
 @media only screen and (min-width: 0rem) {
-  body.dark-mode #why-choose-1821 .cs-title,
-  body.dark-mode #why-choose-1821 .cs-h3,
-  body.dark-mode #why-choose-1821 .cs-item-text {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #why-choose-1821 .cs-content {
-    background-color: transparent;
-  }
-  body.dark-mode #why-choose-1821 .cs-content:before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: var(--primary);
-    opacity: 0.4;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-  }
-  body.dark-mode #why-choose-1821 .cs-item-text {
-    opacity: 0.8;
-  }
+    body.dark-mode #sbsr-76 .cs-wrapper:before {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    body.dark-mode #sbsr-76 .cs-picture:before,
+    body.dark-mode #sbsr-76 .cs-picture:after {
+        background: var(--accent);
+    }
+    body.dark-mode #sbsr-76 .cs-title,
+    body.dark-mode #sbsr-76 .cs-text {
+        color: var(--bodyTextColorWhite);
+    }
 }
-/* Dark Mode Desktop 1400px */
-@media only screen and (min-width: 87.5rem) {
-  body.dark-mode #why-choose-1821:before {
-    background: var(--primary);
-    opacity: 0.4;
-  }
-  body.dark-mode #why-choose-1821 .cs-content {
-    background-color: transparent;
-  }
-  body.dark-mode #why-choose-1821 .cs-content:before {
-    display: none;
-  }
-}
+
+                                
+
                                 
