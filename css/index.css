@@ -10,9 +10,11 @@
     overflow: hidden;
     position: relative;
     z-index: 10;
+    
   }
   #hero-2274 .cs-container {
     width: 100%;
+
     max-width: 80rem;
     margin: auto;
     position: relative;
@@ -66,10 +68,10 @@
     font-weight: 700;
     /* clips corners of the before element */
     overflow: hidden;
-    margin: 0;
+    margin: 20px;
     color: #fff;
     padding: 0 1.75rem;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     display: inline-flex;
     align-items: center;
     justify-content: space-between;

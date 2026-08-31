@@ -141,7 +141,7 @@
     color: #fff;
     min-width: 9.375rem;
     padding: 0 1.5rem;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     display: inline-block;
     position: relative;
     z-index: 1;
@@ -1013,7 +1013,7 @@ fill: #C9A86A; /* gold */
     /* prevents padding from adding to the width */
     box-sizing: border-box;
     padding: 0 2rem;
-    background-color: var(--secondary);
+    background-color: var(--);
     overflow: hidden;
     color: #fff;
     display: inline-block;
