@@ -510,7 +510,7 @@
     width: 100%;
     height: auto;
     padding-bottom: 3rem;
-    background-color: var(--primary);
+    background-color: var(--primaryLight);
     overflow: hidden;
     box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
     opacity: 0;
@@ -608,7 +608,7 @@
     left: 0;
   }
   #cs-navigation .cs-li-link.cs-active {
-    color: var(--primary);
+    color: var(--secondary);
   }
   #cs-navigation .cs-li-link.cs-active:before {
     display: block;
@@ -647,6 +647,7 @@
   }
   #cs-navigation .cs-dropdown.cs-active .cs-drop-link {
     opacity: 1;
+    color: var(--bodyTextColorWhite);
   }
   #cs-navigation .cs-dropdown .cs-li-link {
     position: relative;
@@ -659,7 +660,7 @@
     top: 50%;
     right: -1.25rem;
     transform: translateY(-50%);
-    fill: #C9A86A; /* gold */
+       
   }
   #cs-navigation .cs-drop-ul {
     width: 100%;
@@ -724,7 +725,7 @@
     height: auto;
     margin-left: 0.25rem;
     display: inline-block;
-filter: brightness(0) invert(1); /* makes it white */
+fill: #C9A86A; /* gold */
   }
   #cs-navigation .cs-drop-ul {
     min-width: 12.5rem;
