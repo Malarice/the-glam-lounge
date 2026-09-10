@@ -520,7 +520,7 @@
     width: 100%;
     height: auto;
     padding-bottom: 3rem;
-    background-color: var(--primaryLight);
+    background-color: var(--primary);
     overflow: hidden;
     box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
     opacity: 0;
@@ -595,8 +595,9 @@
     transition-delay: 0.65s;
   }
   #cs-navigation .cs-li-link {
+     font-family: 'Great Vibes', cursive;
     /* 16px - 24px */
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-size: clamp(2rem, 2.5vw, 1.5rem);
     line-height: 1.2em;
     text-decoration: none;
     margin: 0;
@@ -618,7 +619,7 @@
     left: 0;
   }
   #cs-navigation .cs-li-link.cs-active {
-    color: var(--primary);
+    color: var(--medium);
   }
   #cs-navigation .cs-li-link.cs-active:before {
     display: block;
