@@ -29,14 +29,17 @@
     <link rel="manifest" href="/assets/favicons/site.webmanifest">
     <meta name="theme-color" content="#E91E63">
 
-    <link rel="preload" as="image" href="/assets/images/glam-logo.png">
+   <link rel="preload" as="image" href="/assets/images/glam-logo.png">
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
+
 
     <link rel="stylesheet" href="/css/core-styles.css">
     <link rel="stylesheet" href="/css/contact.css">
     <link rel="stylesheet" href="/css/dark.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/index.css">
 
     <title>Contact — The Glam Lounge</title>
 </head>
@@ -50,121 +53,103 @@
     <div id="navbar"></div>
 <div id="banner-712">
     <div class="cs-container">
-        <span class="cs-int-title">Enterprise Risk & Revenue Protection</span>
+        <span class="cs-int-title">Contact</span>
     </div>
 
     <picture class="cs-background">
-        <source media="(max-width: 600px)" srcset="assets/images/banner-risk.webp">
-        <source media="(min-width: 601px)" srcset="assets/images/banner-risk.webp">
-        <img loading="lazy" decoding="async" src="assets/images/banner-risk.webp" alt="Enterprise Risk & Revenue Protection" width="1280" height="568" aria-hidden="true">
+        <source media="(max-width: 600px)" srcset="assets/images/salon-background.webp">
+        <source media="(min-width: 601px)" srcset="assets/images/salon-background.webp">
+        <img loading="lazy" decoding="async" src="assets/images/salon-background.webp" alt="Contact The Glam Lounge" width="1280" height="568" aria-hidden="true">
     </picture>
 </div>
 
-    <!-- ============================================ -->
-    <!--             Side By Side Reverse             -->
-    <!-- ============================================ -->
+                   <!-- ============================================ -->
+<!--                   Contact                    -->
+<!-- ============================================ -->
 
-    <section id="sbsr-2420">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-image-group">
-                <picture class="cs-picture">
-                    <source media="(max-width: 600px)" srcset="assets/images/office-building.webp" />
-                    <source media="(min-width: 601px)" srcset="assets/images/office-building.webp" />
-                    <img loading="lazy" decoding="async" src="assets/images/office-building.webp"
-                        alt="woman with her dog" width="630" height="704" aria-hidden="true" />
-                </picture>
-
-                <span class="cs-message">Clarity that protects revenue.</span>
-
-                <img class="cs-arrow" loading="lazy" decoding="async"
-                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/black-arrow2.svg" alt="graphic"
-                    width="71" height="151" aria-hidden="true" />
-
-                <img class="cs-circle" loading="lazy" decoding="async"
-                    src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/dog-circle.svg" alt="graphic"
-                    width="630" height="646" aria-hidden="true" />
+<section id="contact-569">
+    <div class="cs-container">
+        <div class="cs-left">
+            <div class="cs-content">
+                <span class="cs-topper">Book Your Glam</span>
+                <h2 class="cs-title">Reserve Your Spot</h2>
+                <p class="cs-text">
+                    Fill out the form below and we'll confirm your appointment within 24 hours.
+                </p>
             </div>
 
-            <!-- Right Content Section-->
-            <div class="cs-content-wrapper">
-                <div class="cs-content">
-                    <span class="cs-topper">Enterprise Risk & Revenue Protection</span>
+            <!--Form-->
+            <form class="cs-form" id="cs-form-569" name="Contact Form" method="post">
 
-                    <h2 class="cs-title">Visibility Into the Risks That Actually Threaten Revenue</h2>
+                <label class="cs-label">
+                    Full Name
+                    <input class="cs-input" required type="text" id="name-569" name="name" placeholder="Your name">
+                </label>
 
-                    <p class="cs-text">
+                <label class="cs-label">
+                    Phone Number
+                    <input class="cs-input" required type="text" id="phone-569" name="phone" placeholder="(555) 000-0000">
+                </label>
 
-                        Before Leadership senses something is wrong with the revenue base but can't see where the
-                        exposure lives until a renewal collapses or a top account escalates. Different teams report
-                        different versions of reality — Sales sees green, Customer Success sees yellow, Finance sees a
-                        number that doesn't reconcile to either. Decisions get made under pressure, often too late to
-                        change the outcome.<br><br>
-                        After Executives have one view of the risks that actually threaten revenue, tied to dollar
-                        exposure and renewal timing. The risks that matter are surfaced in time to act on them, not
-                        after the lagging metrics confirm them. Leadership decisions become proactive and the
-                        conversation in the executive room is about choices, not surprises.
-                    </p>
+                <label class="cs-label">
+                    Email Address
+                    <input class="cs-input" required type="email" id="email-569" name="email" placeholder="your@email.com">
+                </label>
 
-                    <span class="cs-topper">Typical Engagements:</span><br>
-                    <ul class="cs-ul">
-                        <li class="cs-li">
-                            <img class="cs-li-icon" aria-hidden="true" loading="lazy" decoding="async"
-                                src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/diamond.svg"
-                                alt="diamond" width="16" height="16" />
-                            Enterprise risk diagnostics for executive teams
-                        </li>
+                <!-- ⭐ NEW SERVICE DROPDOWN -->
+                <label class="cs-label">
+                    Service
+                    <select class="cs-input" required id="service-569" name="service">
+                        <option value="">Select a service...</option>
+                        <option value="soft-glam">Soft Glam</option>
+                        <option value="full-glam">Full Glam</option>
+                        <option value="prom-glam">Prom Glam</option>
+                        <option value="birthday-glam">Birthday Glam</option>
+                        <option value="bridal-trial">Bridal Trial</option>
+                        <option value="bridal-glam">Bridal Glam</option>
+                        <option value="braids">Braids</option>
+                        <option value="wig-install">Wig Install</option>
+                        <option value="loc-retwist">Loc Retwist</option>
+                        <option value="starter-locs">Starter Locs</option>
+                    </select>
+                </label>
 
-                        <li class="cs-li">
-                            <img class="cs-li-icon" aria-hidden="true" loading="lazy" decoding="async"
-                                src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/diamond.svg"
-                                alt="diamond" width="16" height="16" />
+                <label class="cs-label">
+                    Preferred Date
+                    <input class="cs-input" required type="text" id="date-569" name="date" placeholder="mm/dd/yyyy">
+                </label>
 
-                            Revenue exposure assessments tied to renewals, churn, and strategic accounts.
-                        </li>
+                <label class="cs-label cs-message">
+                    Additional Details
+                    <textarea class="cs-input cs-textarea" required name="Message" id="message-569" placeholder="Tell us more about your look, occasion, or any questions..."></textarea>
+                </label>
 
-                        <li class="cs-li">
-                            <img class="cs-li-icon" aria-hidden="true" loading="lazy" decoding="async"
-                                src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/diamond.svg"
-                                alt="diamond" width="16" height="16" />
-                            Risk governance and decision-rights frameworks
-                        </li>
-
-                        <li class="cs-li">
-                            <img class="cs-li-icon" aria-hidden="true" loading="lazy" decoding="async"
-                                src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/diamond.svg"
-                                alt="diamond" width="16" height="16" />
-
-                            Executive briefings with prioritized action paths
-                        </li>
-                    </ul>
-
-                    <a class="cs-button-solid" href="">Schedule Discovery Call</a>
-                </div>
-
-                <div class="cs-wrapper">
-                    <div class="cs-graphic-group">
-                        <img class="cs-circle-small"
-                            src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/dog-circle.svg" alt="circle"
-                            loading="lazy" decoding="async" aria-hidden="true" width="157" height="157" />
-
-                        <img class="cs-graphic"
-                            src="assets/images/sentinel-logo.webp"
-                            alt="sentinel logo" loading="lazy" decoding="async" aria-hidden="true" width="96" height="108" />
-                    </div>
-
-                    <div class="cs-flex">
-                        <h3 class="cs-header">Our mission:</h3>
-
-                        <p class="cs-text cs-graphic-text">
-                            To give executives the operational truth early enough to change outcomes — replacing
-                            surprises with clarity, and reactive firefighting with informed, proactive leadership.
-                        </p>
-                    </div>
-                </div>
-            </div>
+                <button class="cs-submit" type="submit">Book Now</button>
+            </form>
         </div>
-    </section>
+
+        <div class="cs-right">
+            <div class="cs-flex">
+                <span class="cs-header">Our Location</span>
+                <a href="" class="cs-link">Newnan, GA<br> United States</a>
+            </div>
+
+            <div class="cs-flex">
+                <span class="cs-header">Quick Contacts</span>
+                <a href="" class="cs-link">info@glamloungebeauty.com</a>
+                <a href="tel:555-689-9566" class="cs-link cs-phone">+1 (555) 686-9566</a>
+            </div>
+
+            <ul class="cs-social">
+                <li class="cs-li"><a class="cs-social-link" href=""><img class="cs-icon" src="/assets/svgs/tiktok.svg" width="18"></a></li>
+                <li class="cs-li"><a class="cs-social-link" href=""><img class="cs-icon" src="/assets/svgs/facebook.svg" width="10"></a></li>
+                <li class="cs-li"><a class="cs-social-link" href=""><img class="cs-icon" src="/assets/svgs/instagram.svg" width="16"></a></li>
+                <li class="cs-li"><a class="cs-social-link" href=""><img class="cs-icon" src="/assets/svgs/youtube.svg" width="21"></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
 
 
 
