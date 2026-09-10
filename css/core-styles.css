@@ -3,14 +3,25 @@
 <--- -------------------------- -*/
 /* Mobile */
 @media only screen and (min-width: 0rem) {
-:root {
-  --primary: #0A1A2F;        /* Deep Navy */
---primaryLight: #1F3B63;   /* Lighter Navy */
---secondary: #b48020;      /* Executive Gold */
---secondaryLight: #E8D3A0; /* Light Gold Accent */
---headerColor: #fff;    /* Rich Black */
---bodyTextColor: #4E4B66;  /* Neutral Gray */
---bodyTextColorWhite: #FAFBFC; /* White */
+  :root {
+   /* PRIMARY BRAND COLORS */
+--primary:  #ee61a3
+ ;          /* Glam Pink */
+--primaryLight: #F8C8DC;     /* Soft Glam Pink */
+--primaryDark: #C2185B;      /* Deep Glam Pink */
+
+/* ACCENTS */
+--secondary: #111;        /* Executive Gold */
+--secondaryLight: #E8D3A0;   /* Light Gold Accent */
+
+/* TEXT */
+--headerColor: #FFFFFF;      /* Glam White */
+--bodyTextColor: #4E4B66;    /* Neutral Gray */
+--bodyTextColorWhite: #FFFFFF; /* Clean White */
+
+  
+
+
 
 
     /* 13px - 16px */
@@ -127,8 +138,7 @@
     width: 100%;
     max-width: 40.625rem;
     margin: 0;
-    color: var(--bodyTextColor);
-  }
+    color: var(--bodyTextColorWhite);  }
   .cs-button-solid {
     border-radius: 10px;
     font-size: 1rem;
@@ -267,7 +277,7 @@
     width: 100%;
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     position: fixed;
     z-index: 10000;
@@ -608,13 +618,13 @@
     left: 0;
   }
   #cs-navigation .cs-li-link.cs-active {
-    color: var(--secondary);
+    color: var(--primary);
   }
   #cs-navigation .cs-li-link.cs-active:before {
     display: block;
   }
   #cs-navigation .cs-li-link:hover {
-    color: var(--secondary);
+    color: var(--primary);
   }
 }
 /*-- -------------------------- -->
@@ -625,6 +635,7 @@
   #cs-navigation .cs-dropdown {
     color: var(--bodyTextColorWhite);
     position: relative;
+    
   }
 
   #cs-navigation .cs-dropdown .cs-dropdown-toggle {
@@ -843,18 +854,21 @@ fill: #C9A86A; /* gold */
   body.scroll #cs-navigation {
     /* 53px, the ssme height as the cs-top-container */
    top: -3.3125rem;
+   
 
   }
   #cs-navigation {
+
     width: 100%;
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
     padding: 0;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     position: fixed;
     z-index: 10000;
     transition: transform 0.3s;
+  
   }
   #cs-navigation .cs-top-bar {
     width: 100%;
@@ -965,7 +979,7 @@ fill: #C9A86A; /* gold */
   }
   #cs-navigation .cs-logo img {
     width: auto;
-    height: 100%;
+    height: 12vh;
     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
     object-fit: contain;
   }
@@ -985,8 +999,9 @@ fill: #C9A86A; /* gold */
     flex: none;
   }
   #cs-navigation .cs-li-link {
+        font-family: 'Great Vibes', cursive;
     /* 14px - 16px */
-    font-size: clamp(0.875rem, 1.3vw, 1rem);
+    font-size: clamp(1.575rem, 1.3vw, 1rem);
     line-height: 1.5em;
     text-decoration: none;
     margin: 0;
@@ -996,11 +1011,11 @@ fill: #C9A86A; /* gold */
     transition: color 0.3s;
   }
   #cs-navigation .cs-li-link:hover {
-    color:#C9A86A;
+    color:var(--primary);
   }
   #cs-navigation .cs-li-link.cs-active {
     font-weight: 700;
-    color: var(--secondary);
+    color: var(--primary);
   }
   #cs-navigation .cs-button-solid {
     font-size: 1rem;
@@ -1013,7 +1028,7 @@ fill: #C9A86A; /* gold */
     /* prevents padding from adding to the width */
     box-sizing: border-box;
     padding: 0 2rem;
-    background-color: var(--);
+    background-color: var(--primary);
     overflow: hidden;
     color: #fff;
     display: inline-block;
