@@ -979,7 +979,7 @@ fill: #C9A86A; /* gold */
   }
   #cs-navigation .cs-logo img {
     width: auto;
-    height: 12vh;
+    height: 10vh;
     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
     object-fit: contain;
   }
