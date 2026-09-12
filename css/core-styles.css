@@ -1089,9 +1089,11 @@ fill: #C9A86A; /* gold */
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
     #footer-1147 {
+     top: -45px;
         padding: var(--sectionPadding);
         position: relative;
         z-index: 1;
+        
     }
     #footer-1147 .cs-container {
         width: 100%;
@@ -1106,7 +1108,7 @@ fill: #C9A86A; /* gold */
         /* 32px - 40px */
         margin-bottom: clamp(2rem, 4vw, 2.5rem);
         padding-bottom: clamp(2rem, 4vw, 2.5rem);
-        border-bottom: 1px solid #484848;
+        border-bottom: 4px solid var(--primary);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1114,6 +1116,7 @@ fill: #C9A86A; /* gold */
         gap: 2rem;
     }
     #footer-1147 .cs-ul {
+       
         margin: 0;
         padding: 0;
         display: flex;
@@ -1123,13 +1126,15 @@ fill: #C9A86A; /* gold */
         row-gap: 0.5rem;
         /* 28px - 40px */
         column-gap: clamp(1.75rem, 4vw, 2.5rem);
+       
     }
     #footer-1147 .cs-li {
         list-style: none;
     }
     #footer-1147 .cs-link {
+       font-family: 'Great Vibes', cursive;
         /* 14px - 16px */
-        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        font-size: clamp(1.275rem, 1.5vw, 1rem);
         line-height: 1.5em;
         text-decoration: none;
         margin: 0;
@@ -1138,7 +1143,7 @@ fill: #C9A86A; /* gold */
         transition: color 0.3s;
     }
     #footer-1147 .cs-link:hover {
-        color: var(--secondary);
+        color: var(--primary);
     }
     #footer-1147 .cs-logo {
         width: 10.5rem;
@@ -1179,7 +1184,7 @@ fill: #C9A86A; /* gold */
         transition: background-color 0.3s;
     }
     #footer-1147 .cs-social-link:hover {
-        background-color: var(--secondary);
+        background-color: var(--primary);
     }
     #footer-1147 .cs-social-link:hover .cs-social-icon {
         filter: grayscale(1) brightness(0);
@@ -1205,7 +1210,7 @@ fill: #C9A86A; /* gold */
         transition: color 0.3s;
     }
     #footer-1147 .cs-copyright-link:hover {
-        color: var(--secondary);
+        color: var(--primary);
     }
     #footer-1147 .cs-background {
         width: 100%;
