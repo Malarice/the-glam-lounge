@@ -270,9 +270,9 @@
     overflow: hidden;
   }
   body.scroll #cs-navigation {
-    /* 53px, same height as the cs-top-container */
-    transform: translateY(-3.3125rem);
-  }
+    transform: none !important;
+}
+
   #cs-navigation {
     width: 100%;
     /* prevents padding from affecting height and width */
@@ -380,16 +380,16 @@
     height: auto;
     display: block;
   }
-  #cs-navigation .cs-container {
+#cs-navigation .cs-container {
     width: 100%;
-    /* prevents padding from affecting height and width */
     box-sizing: border-box;
     padding: 1.25rem 1rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     position: relative;
-  }
+}
+
   #cs-navigation .cs-logo {
     width: auto;
     height: 2.5rem;
@@ -404,14 +404,15 @@
     z-index: 10;
   }
   #cs-navigation .cs-logo img {
-    width: auto;
+   width: auto;
+   margin-left: 50px;
     height: 9vh;
     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
     object-fit: contain;
+    
+     
   }
-  #cs-navigation .cs-nav {
-    order: 2;
-  }
+ 
   #cs-navigation .cs-toggle {
     width: 2.875rem;
     height: 2.875rem;
@@ -445,6 +446,7 @@
     width: clamp(1.5rem, 2vw, 1.75rem);
     height: 0.75rem;
     position: relative;
+    
   }
   #cs-navigation .cs-line {
     width: 100%;
